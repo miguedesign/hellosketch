@@ -1,0 +1,79 @@
+.Footer
+	width 100%
+	position relative
+	z-index 10000
+	&-Link
+		background-position center
+		background-repeat no-repeat
+		background-size 100%
+		display inline-block
+		height 55px
+		overflow hidden
+		width 55px
+		&.instagram
+			background-image url('../img/static/instagram-white-icon.png')
+		&.medium
+			background-image url('../img/static/medium-white-icon.png')
+		&.twitter
+			background-image url('../img/static/twitter-white-icon.png')
+		&.youtube
+			background-image url('../img/static/youtube-white-icon.png')
+		span 
+			display none
+	&-Bottom
+		border-top solid thin white_color
+		font-size 12px
+		padding 10px 0
+		position relative
+		text-align left
+		&-Img
+			display inline-block
+			vertical-align middle
+			width 30px
+			margin-right 10px
+		&-Partners
+			display inline-block
+			margin 0
+			text-align left
+			vertical-align middle
+		&-Link
+			color white_color
+			font-weight 600
+			letter-spacing 1px
+			vertical-align middle
+		&-Copy
+			color white_color
+			display inline-block
+			text-align center
+			margin 10px auto 0
+			width 100%
+			background-image red
+			
+			
+@media only screen and (min-width : 610px)
+	.Footer
+		&-Bottom
+			&-Copy
+				position absolute
+				text-align right
+				margin 0
+				right 0
+				top 15px
+				width 30%
+						
+@media only screen and (min-width : 1100px)
+	.Footer
+		&-Link
+			display inline-block
+			width 130px
+			margin 10px 20px
+			height 130px
+			opacity .9
+			&:hover
+				opacity 1
+	
+		
+
+
+
+

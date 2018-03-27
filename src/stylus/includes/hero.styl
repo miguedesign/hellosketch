@@ -1,0 +1,174 @@
+.Hero
+	background-image url('../img/static/bg-hero-top.png')
+	background-position center -100px 
+	background-repeat no-repeat
+	background-size 310%
+	display inline-block
+	height 99vh
+	opacity 0
+	overflow hidden
+	transition_all(.5s)
+	width 100%
+	&.is-load
+		background-position center 0px
+		background-size 300%
+		.Hero
+			&-Icon
+				margin 40px auto 10px
+			
+		&:after
+			bottom 0
+	 
+	
+	&-Icon
+		width 40px
+		margin 0px auto
+		transition_all(.7s)
+		
+	&-Logo
+		background-image url('../img/static/logo-hero.png')
+		background-position center
+		background-repeat no-repeat
+		background-size 100%
+		height 110px
+		max-width 700px
+		width 90%
+		span 
+			display none
+	&-Copy
+		font-size 24px
+		font-weight 400
+		max-width 700px
+		width 90%
+		margin 0 auto 100px
+	&-Cta 
+		text-align center
+		
+
+	
+	&:after
+		display block
+		content ''
+		background-image url('../img/static/bg-hero-footer.png')
+		background-position center
+		background-repeat no-repeat
+		background-size cover
+		width 100%
+		position absolute
+		height 50%
+		bottom -100px
+		left 0
+		transition_all(.5s)
+		z-index -1
+		
+	&-btn_arrow
+		width 30px
+		height 30px
+		position absolute
+		bottom 20px
+		left 50%
+		margin-left -15px
+		background-image url('../img/static/arrow-bottom.svg')
+		background-size 100%
+		background-repeat no-repeat
+		background-position center
+		animation arrowbounce 1.5s infinite
+
+
+
+
+@media only screen and (min-width : 610px) and (orientation: landscape) and (max-width : 910px)
+	.Hero
+		height auto
+		padding-bottom 30px
+		background-size 180%
+		&.is-load
+			background-size 100%
+		&-Icon
+			margin 40px auto 20px
+		&-Copy
+			font-size 24px
+			margin 0 auto 50px
+		&-Logo
+			height 110px
+			width 60%
+			
+@media only screen and (min-width : 610px) and (orientation: portrait)
+	.Hero
+		background-size 180%
+		&.is-load
+			background-size 150%
+		
+		&-Logo
+			height 200px
+			
+@media only screen and (min-width : 910px)
+	.Hero
+		background-size 100%
+		&.is-load
+			background-size 150%
+		
+		&-Copy
+			font-size 36px
+		&-Logo
+			height 240px
+			
+
+			
+
+@media only screen and (min-width : 1100px)
+	.Hero
+		height 99vh
+		position initial
+		background-size 110%
+		&-Cta
+			display inline-block
+			transition_all(.3s)
+				
+				
+			
+@media only screen and (min-width : 1300px)
+	.Hero
+		background-size 95%
+		transition_all(1.4s)
+		&.is-load
+			background-size 100%
+			.Hero
+				&-Icon
+					margin 20px auto 50px
+				
+		&-Icon
+			margin-top 40px
+		
+@media only screen and (min-width : 1400px)
+	.Hero
+		&.is-load
+			.Hero
+				&-Icon
+					margin 60px auto 50px
+				
+		&-Icon
+			margin-top 40px
+		
+
+
+
+@keyframes arrowbounce
+	0%
+		margin-bottom 3px
+	40%
+		margin-bottom -3px
+	100% 
+		margin-bottom 3px
+		
+
+
+
+
+
+
+
+
+
+
+

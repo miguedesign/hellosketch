@@ -1,0 +1,151 @@
+.GridVideo
+	position relative
+	height 400px
+	overflow hidden
+	&-item
+		width 200px
+		display inline-block
+		margin 0 auto
+		position absolute
+		shadow_custom(0, 25px, 40px, -10px, .4)
+		filter blur(5px)
+		
+		&.item-1
+			top 5%
+			left -10%
+			z-index 3
+		&.item-2
+			top 60% 
+			left -10%
+		&.item-3
+			top 35%
+			left 5%
+		&.item-4
+			top 35%
+			right 5%
+			z-index 1
+		&.item-5
+			top 60% 
+			right -10%
+		&.item-6
+			top 5%
+			right -10%
+			z-index 4
+		&.item-central
+			filter none
+			left 50%
+			margin-left -150px
+			margin-top -100px
+			top 50%
+			width 300px
+			z-index 10
+				
+	&-Btn
+		position absolute
+		bottom 18%
+		left 50%
+		margin-left -125px
+		z-index 10
+		
+		
+		
+		
+@media only screen and (min-width : 610px) and (orientation: landscape) and (max-width : 910px)
+	.GridVideo
+		&-item
+			&.item-central
+				top 45%
+				width 450px
+				margin-left -225px
+				margin-top -125px
+				
+@media only screen and (min-width : 610px)
+	.GridVideo
+		height 450px
+		&-item
+			&.item-central
+				margin-left -250px
+				margin-top -170px
+				top 50%
+				width 500px
+		&-Btn
+			bottom 15%
+		
+			
+@media only screen and (min-width : 910px)
+	.GridVideo
+		height 520px
+		&-item
+			width 300px
+			&.item-1
+				top 14%
+				left -1%
+				z-index 3
+			&.item-2
+				top 55% 
+				left 5%
+			&.item-3
+				top 28%
+				left 20%
+			&.item-4
+				top 28%
+				right 20%
+				z-index 1
+			&.item-5
+				top 55% 
+				right 5%
+			&.item-6
+				top 14%
+				right -1%
+				z-index 4
+			&.item-central
+				shadow_custom(0, 35px, 80px, -15px, .4)
+				
+		&-Btn
+			bottom 18%
+			
+@media only screen and (min-width : 1100px)
+	.GridVideo
+		&-Btn
+			transition_all(.3s)
+			
+@media only screen and (min-width : 1200px)
+	.GridVideo
+		height 700px
+		&-item
+			width 350px
+			&.item-2
+			&.item-5
+				top 65%
+			&.item-central
+				width 900px
+				margin-left -450px
+				margin-top -300px
+		&-Btn
+			bottom 12%
+
+@media only screen and (min-width : 1400px)
+	.GridVideo
+		height 750px
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
