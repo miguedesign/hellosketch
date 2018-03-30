@@ -11,42 +11,45 @@
 	Copyright 2017
 */
 
-var easing = require('./vendor/easing');
+// var easing = require('./vendor/easing');
 
-var simplezoom = require('./vendor/simplezoom');
+// var simplezoom = require('./vendor/simplezoom');
 
-var typed = require('./vendor/typed');
+// var typed = require('./vendor/typed');
 
-var scrollreveal = require('./libs/scrollreveal');
+// var scrollreveal = require('./libs/scrollreveal');
 
-var scrolled = require('./libs/scrolled');
+// var scrolled = require('./libs/scrolled');
 
-var topbar = require('./libs/topbar');
+// var topbar = require('./libs/topbar');
 
-var hero = require('./libs/hero');
+// var hero = require('./libs/hero');
 
-var sticknav = require('./libs/sticknav');
+// var sticknav = require('./libs/sticknav');
 
-var tipedJS = require('./libs/tipedJS');
+// var tipedJS = require('./libs/tipedJS');
 
-var parallax = require('./libs/parallax');
+// var parallax = require('./libs/parallax');
+
+var register = require('./libs/register');
 
 
 jQuery(document).ready(function($) {
 
-	hero();
+	register();
+	// hero();
 
-	scrolled();
+	// scrolled();
   
-	topbar();
+	// topbar();
 	
-	sticknav();
+	// sticknav();
 
-	scrollreveal();
+	// scrollreveal();
 
-	tipedJS();
+	// tipedJS();
 	
-	parallax();
+	// parallax();
 
 });
 

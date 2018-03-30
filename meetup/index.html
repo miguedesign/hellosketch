@@ -53,12 +53,12 @@
 			</div>
 			<div class="Form_Item">
 				<label for="Correo">Correo electrónico</label>
-				<input type="email" id="Correo" name="Correo" data-msg-required="👆Este campo es requerido." data-msg-email="👀 Por favor ingresa un correo valido." required placeholder="youremail@email.com">
+				<input type="email" id="Correo" name="Correo" required placeholder="youremail@email.com">
 			</div>
 			<div class="Form_Item">
 				<label>¿Asististe al meet up anterior?</label>
 				<div class="Form_Item_Sub">
-					<input type="radio" id="prev-si" name="Meetup_Beta" value="Si" class="prev">
+					<input type="radio" id="prev-si" name="Meetup_Beta" value="Si" class="prev" onclick="openFrom()">
 					<div class="checkmark"></div>
 					<label for="prev-si">Si</label>
 				</div>
@@ -78,7 +78,17 @@
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="../public/js/vendor/jquery-2.1.4.min.js"><\/script>')</script>
+	<script type='text/javascript' src="../public/js/main.js" async></script>
+
 	
+	<script src="https://usebasin.com/f/0a528b3bba4e/ahoy.js" async defer></script>
+
+	<script type="text/javascript">
+		function openFrom() {
+			window.open('https://docs.google.com/forms/d/e/1FAIpQLScme8ro6iX_7N2HSQZuQf7_ISZvHcNKQkNy5nS3vrwtqs3YMw/viewform?usp=sf_link','_blank');
+		}
+
+	</script>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-90120013-1"></script>
 	<script>
