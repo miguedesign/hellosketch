@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>MeetUp - Prototipado con Sketch 49</title>
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="icon" href="../public/img/meetup/favicon.png" sizes="32x32">
+	<link href='https://fonts.googleapis.com/css?family=Antic+Slab|Josefin+Slab|Noto+Sans' rel='stylesheet' type='text/css'>
+	<meta name="description" content="MeetUp - Prototipado con Sketch 49 | Laboratoria · 19 de Abril de 2018 · 19:00Hrs">
+	<link rel="stylesheet" href="../public/css/style.css">
+
+  <!-- twitter card -->
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="http://hellosketch.com/meetup">
+  <meta name="twitter:title" content="Hello my Sketch is">
+  <meta name="twitter:description" content="MeetUp - Prototipado con Sketch 49 | Laboratoria · 19 de Abril de 2018 · 19:00Hrs">
+  <meta name="twitter:image" content="http://hellosketch.com/public/img/meetup/isotipo.jpg"/>    
+  
+	<!-- Facebook Open Graph -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Hello my Sketch is"/>
+  <meta property="og:description" content="MeetUp - Prototipado con Sketch 49 | Laboratoria · 19 de Abril de 2018 · 19:00Hrs"/>
+  <meta property="og:url" content="http://hellosketch.com/meetup"/>
+  <meta property="og:image" content="http://hellosketch.com/public/img/meetup/isotipo.jpg"/>
+
+<!-- 
+
+	Theme Name: MeetUp - Prototipado con Sketch 49 | Laboratoria · 19 de Abril de 2018 · 19:00Hrs
+	Theme URI: http://hellosketch.com/meetup
+	Author: @elnodos
+	Author Contact: hello@migue.design
+	Copyright 2017
+
+ -->
+
+</head>
+<body>
+	<section class="Info">
+		<h2 class="Info_Name">Sketch&Design CDMX</h2>
+		<h1 class="Info_Title">Prototipado <span>en Sketch 49</span></h1>
+		<h3 class="Info_Date"><div>19 de Abril 2018</div> <span>·</span> <div> 7:00 PM</div></h3>
+		<h3 class="Info_Address">Laboratoria <small>Tonalá 30, Roma Nte</small></h3>
+	</section>
+
+	<section class="Sidebar">
+		<h3 class="Sidebar_Title">Regístrate</h3>
+			<p class="Sidebar_Slots">Quedan <span id="slots">29</span> slots disponibles.</p>
+
+		<form accept-charset="UTF-8" action="https://usebasin.com/f/0a528b3bba4e" method="POST" class="Form" id="form">
+			<div class="Form_Item">
+				<label for="name">Nombre</label>
+				 <input type="text" id="nombre" name="nombre" required placeholder="Name">
+			</div>
+			<div class="Form_Item">
+				<label for="email">Correo electrónico</label>
+				<input type="email" id="correo" name="correo" data-msg-required="👆Este campo es requerido." data-msg-email="👀 Por favor ingresa un correo valido." required placeholder="youremail@email.com">
+			</div>
+			<div class="Form_Item">
+				<label>¿Asististe al meet up anterior?</label>
+				<div class="Form_Item_Sub">
+					<input type="radio" id="prev-si" name="prev" value="Si" class="prev">
+					<div class="checkmark"></div>
+					<label for="prev-si">Si</label>
+				</div>
+
+				<div class="Form_Item_Sub">
+					<input type="radio" id="prev-no" name="prev" value="No" checked class="prev">
+					<div class="checkmark"></div>
+					<label for="prev-no">No</label>
+				</div>
+			</div>
+			<div class="Form_Item">
+				<button type="submit" form="form" value="Submit">Regístrame al meetup</button>
+			</div>
+		</form>
+	</section>
+
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="../public/js/vendor/jquery-2.1.4.min.js"><\/script>')</script>
+	
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-90120013-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-90120013-1');
+	</script>
+</body>
+</html>
