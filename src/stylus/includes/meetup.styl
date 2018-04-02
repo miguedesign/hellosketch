@@ -39,18 +39,19 @@ body
 		background white_color
 		text-transform uppercase
 		display inline-block
+		text-align center
 		
 		
 	&_Title
 		font-weight 700
-		font-size 40px
+		font-size 42px
 		margin-top 30px
 		span
 			display block
 			font-size 40px
-			font-weight 400
+			font-weight 300
 	&_Date
-		font-weight 400
+		font-weight 300
 		margin-top 50px
 		font-size 24px
 		div 
@@ -61,9 +62,9 @@ body
 	&_Address
 		margin-top 10px
 		font-size 24px
-		font-weight 700
+		font-weight 300
 		small
-			font-size 16px
+			font-size 18px
 			display block
 			font-weight 100
 
@@ -72,14 +73,13 @@ body
 	padding 30px
 	text-align left
 	&_Title
-		font-size 30px 
+		font-size 50px 
 		margin-bottom 10px
-		font-weight 600
+		font-weight 400
 	&_Slots
-		font-size 18px
+		font-size 30px
 		margin-top 10px
 		font-weight 100
-		color rgba(black_color_m, .7)
 		span
 			color black_color_m
 			font-weight 700
@@ -97,13 +97,13 @@ body
 		text-indent 10px
 		display block
 		width 100%
-		border solid thin dark_color_m
+		border solid 2px dark_color_m
 		font-weight 700
 		font-size 16px
 		transition_all(.3s)
 		&:focus
-			box-shadow 0px 4px 16px -4px dark_color_m
-			outline 0 0 4px primary_color
+			outline none
+			border-color black_color_m
 	
 	button
 		background white_color
@@ -205,7 +205,24 @@ body
 	.Sidebar
 		padding 45px
 
+@media only screen and (min-width : 768px)
+	.Info
+		&_Title
+			font-size 90px
+			span
+				font-size 90px
+		&_Date
+		&_Address
+			font-size 48px
+			small
+				font-size 24px
 			
+			
+	.Form
+		margin-top 75px
+		input
+			font-size 24px
+						
 
 @media only screen and (min-width : 910px)
 	.Info
@@ -239,19 +256,8 @@ body
 		padding 70px
 		width 400px
 
-@media only screen and (min-width : 768px), (min-height : 1024px)
-	.Info
-		&_Title
-			font-size 90px
-			span
-				font-size 90px
-		&_Date
-		&_Address
-			font-size 48px
-			
-			
-			
-@media only screen and (min-width : 1024px), (min-height : 768px)
+
+@media only screen and (min-width : 1024px)
 	.Info
 		&:before
 			width 450px
@@ -264,6 +270,12 @@ body
 		&_Date
 			font-size 40px
 			
+		&_Address
+			margin-top 0
+			
+		&_Date
+			margin-top 130px
+		
 	.Sidebar
 		&_Title
 			font-size 24px
@@ -278,8 +290,9 @@ body
 		&:before
 			transition_all(.4s)
 		&:hover
+			color acent_color_m
 			&:before
-				background acent_color_m
+				background black_color_m
 			&:after
 				top -1px
 				left 0
@@ -287,22 +300,39 @@ body
 	
 
 		
-@media only screen and (min-width : 1300px)
+@media only screen and (min-width : 1200px)
 	.Info 
-		padding-top 100px
-		padding-left 150px
+		padding-top 90px
+		padding-left 80px
 		padding-right 35%
+		&::after
+			background-position center bottom
+			background-size 400px
+			
 		&_Title
 			font-size 100px
 			span
 				font-size 100px
+		&_Address
+		&_Date
+			font-size 45px
 	.Sidebar
-		padding 100px 70px
+		padding 90px 70px
 		width 35%
+		&_Title
+			font-size 50px
+		&_Slots
+			font-size 35px
 
 @media only screen and (min-width : 1600px)
 	.Info 
 		padding-top 200px
+		padding-left 140px
+		&_Title
+			font-size 110px
+			span
+				font-size 110px
+		
 	.Sidebar
-		padding 200px 100px
+		padding 200px 80px
 
