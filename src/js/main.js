@@ -11,7 +11,7 @@
 	Copyright 2017
 */
 
-// var easing = require('./vendor/easing');
+var easing = require('./vendor/easing');
 
 // var simplezoom = require('./vendor/simplezoom');
 

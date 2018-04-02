@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="106px" height="97px" viewBox="0 0 106 97" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>💎</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="6.64055676%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#EC4807" offset="0%"></stop>
+            <stop stop-color="#FFBD00" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Lnd-🖥--Ok" transform="translate(-632.000000, -298.000000)">
+            <g id="Group-7" transform="translate(472.000000, 301.000000)">
+                <g id="💎" transform="translate(163.000000, 0.000000)">
+                    <g id="sketch-symbol" fill-rule="nonzero">
+                        <polygon id="Shape" fill="url(#linearGradient-1)" opacity="0.3" points="21.8181819 2.96316965 50.0000001 0 78.1818183 2.96316965 100 32.0926339 50.0000001 90 0 32.0926339"></polygon>
+                        <polygon id="Shape-Copy" stroke="#191919" stroke-width="4.16666667" points="21.8181819 2.96316965 50.0000001 0 78.1818183 2.96316965 100 32.0926339 50.0000001 90 0 32.0926339"></polygon>
+                    </g>
+                    <polygon id="Path-2" stroke="#191919" stroke-width="4.16666667" points="50.1993815 1.36149089 20.1619466 32.6595052 50.1993815 86.1604818 79.6940104 32.6595052"></polygon>
+                    <path d="M96.25,32.9166667 L3.75,32.9166667" id="Line" stroke="#191919" stroke-width="4.16666667" stroke-linecap="square"></path>
+                    <path d="M22.0833333,5.41666667 L20.4166667,32.0833333" id="Line-2" stroke="#191919" stroke-width="4.16666667" stroke-linecap="square"></path>
+                    <polyline id="Line-2-Copy" stroke="#191919" stroke-width="4.16666667" stroke-linecap="square" transform="translate(78.750000, 19.166667) scale(-1, 1) translate(-78.750000, -19.166667) " points="79.5833333 6.25 79.1341 10.7782497 77.9166667 32.0833333"></polyline>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
