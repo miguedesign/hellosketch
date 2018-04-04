@@ -48,36 +48,15 @@
 	</section>
 
 	<section class="Sidebar">
-		<h3 class="Sidebar_Title">Regístrate</h3>
-			<p class="Sidebar_Slots">Quedan pocos slots disponibles.</p>
+		<h3 class="Sidebar_Title">Regístro cerrado.</h3>
+			<p class="Sidebar_Slots">Puedes estar al tanto de nuestro próximo meetup desde nuestro grupo en facebook.</p>
 
-		<form accept-charset="UTF-8" action="https://usebasin.com/f/0a528b3bba4e" method="POST" class="Form" id="form">
+		<div class="Form">
 			<div class="Form_Item">
-				<label for="Nombre">Nombre</label>
-				 <input type="text" id="Nombre" name="Nombre" required>
+				<button type="submit" onclick="openGroup()">Únete al grupo</button>
 			</div>
-			<div class="Form_Item">
-				<label for="Correo">Correo electrónico</label>
-				<input type="email" id="Correo" name="Correo" required>
-			</div>
-			<div class="Form_Item">
-				<label>¿Asististe al meetup anterior?</label>
-				<div class="Form_Item_Sub">
-					<input type="radio" id="prev-si" name="Meetup_Beta" value="Si" class="prev" onclick="openFrom()">
-					<div class="checkmark"></div>
-					<label for="prev-si">Si</label>
-				</div>
+		</div>
 
-				<div class="Form_Item_Sub">
-					<input type="radio" id="prev-no" name="Meetup_Beta" value="No" class="prev" onclick="openFrom2()">
-					<div class="checkmark"></div>
-					<label for="prev-no">No</label>
-				</div>
-			</div>
-			<div class="Form_Item">
-				<button type="submit" form="form" value="Submit">Regístrame al meetup</button>
-			</div>
-		</form>
 	</section>
 
 	<div class="Modal" id="Modal">
@@ -115,6 +94,9 @@
 		}
 		function openFrom2() {
 			window.open('https://docs.google.com/forms/d/e/1FAIpQLSfYrw2jQnDjQtEprkQDY4nDqdrC5bnXylui680d5fQChMixNQ/viewform','_blank');
+		}
+		function openGroup() {
+			window.open('https://www.facebook.com/groups/209005702967958/');
 		}
 
 	</script>
