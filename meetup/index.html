@@ -49,49 +49,44 @@
 	</section>
 
 	<section class="Sidebar">
-<<<<<<< HEAD
-		<h3 class="Sidebar_Title">Regístro cerrado.</h3>
-			<p class="Sidebar_Slots">Síguenos en nuestro grupo de Facebook para estar al tanto de próximas actividades</p>
-=======
 		<h3 class="Sidebar_Title">Regístrate</h3>
 			<p class="Sidebar_Slots">Completa el siguiente formulario y asegura un lugar para asistir al meetup en Centraal.</p>
->>>>>>> design-sistem
 
 		<div class="Form">
-			<div class="Form_Item">
-				<button type="submit" onclick="openGroup()">Únete al grupo</button>
-			</div>
-<<<<<<< HEAD
+			<form accept-charset="UTF-8" action="https://usebasin.com/f/0a528b3bba4e" method="POST" class="Form" id="form">
+				<div class="Form_Item">
+					<label for="Nombre">Nombre</label>
+					 <input type="text" id="Nombre" name="Nombre" required>
+				</div>
+				<div class="Form_Item">
+					<label for="Apellido">Apellido</label>
+					 <input type="text" id="Apellido" name="Apellido" required>
+				</div>
+				<div class="Form_Item">
+					<label for="Correo">Correo electrónico</label>
+					<input type="email" id="Correo" name="Correo" required>
+				</div>
+				<div class="Form_Item">
+					<label>¿Asististe al meetup anterior?</label>
+					<div class="Form_Item_Sub">
+						<input type="radio" id="prev-si" name="Meetup_1" value="Si" class="prev" onclick="openFrom()">
+						<div class="checkmark"></div>
+						<label for="prev-si">Si</label>
+					</div>
+
+					<div class="Form_Item_Sub">
+						<input type="radio" id="prev-no" name="Meetup_1" value="No" class="prev" onclick="openFrom2()">
+						<div class="checkmark"></div>
+						<label for="prev-no">No</label>
+					</div>
+				</div>
+				<div class="Form_Item">
+					<button type="submit" form="form" value="Submit" class="cta">Regístrame al Meetup</button>
+				</div>
+			</form>
+			
 		</div>
 
-=======
-			<div class="Form_Item">
-				<label for="Apellido">Apellido</label>
-				 <input type="text" id="Apellido" name="Apellido" required>
-			</div>
-			<div class="Form_Item">
-				<label for="Correo">Correo electrónico</label>
-				<input type="email" id="Correo" name="Correo" required>
-			</div>
-			<div class="Form_Item">
-				<label>¿Asististe al meetup anterior?</label>
-				<div class="Form_Item_Sub">
-					<input type="radio" id="prev-si" name="Meetup_1" value="Si" class="prev">
-					<div class="checkmark"></div>
-					<label for="prev-si">Si</label>
-				</div>
-
-				<div class="Form_Item_Sub">
-					<input type="radio" id="prev-no" name="Meetup_1" value="No" class="prev">
-					<div class="checkmark"></div>
-					<label for="prev-no">No</label>
-				</div>
-			</div>
-			<div class="Form_Item">
-				<button type="submit" form="form" value="Submit" class="cta">Regístrame al Meetup</button>
-			</div>
-		</form>
->>>>>>> design-sistem
 	</section>
 
 	<div class="Modal" id="Modal">
@@ -118,7 +113,7 @@
 	
 	<script src="https://usebasin.com/f/0a528b3bba4e/ahoy.js" async defer></script>
 
-<<<<<<< HEAD
+
 	<script type="text/javascript">
 		function openFrom() {
 			window.open('https://docs.google.com/forms/d/e/1FAIpQLScme8ro6iX_7N2HSQZuQf7_ISZvHcNKQkNy5nS3vrwtqs3YMw/viewform','_blank');
@@ -131,8 +126,8 @@
 		}
 
 	</script>
-=======
->>>>>>> design-sistem
+
+
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-90120013-1"></script>
 	<script>
