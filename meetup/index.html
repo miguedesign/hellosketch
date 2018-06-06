@@ -2,35 +2,35 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>MeetUp - Prototipado con Sketch 49</title>
+	<title>MeetUp - Sistemás de Diseño</title>
 	<meta name="viewport" content="width=device-width, minimum-scale=1.0, user-scalable=no">
 	<link rel="shortcut icon" href="../public/img/meetup/favicon.png" />
 	<link rel="icon" sizes="192x192" href="../public/img/meetup/favicon.png">
 	<link href='https://fonts.googleapis.com/css?family=Rubik:300,400,700' rel='stylesheet' type='text/css'>
-	<meta name="description" content="MeetUp - Prototipado con Sketch 49 | Laboratoria · 19 de Abril de 2018 · 19:00Hrs">
+	<meta name="description" content="MeetUp - Sistemás de Diseño | Centraal · 22 de Junio de 2018 · 19:00Hrs">
 	<link rel="stylesheet" href="../public/css/style.css">
 
   <!-- twitter card -->
 	<meta property="twitter:account_id" content="818683055133093889" />
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="@hellomysketch">
-  <meta name="twitter:title" content="Sketch MeetUp | Prototipado con Sketch 49">
-  <meta name="twitter:description" content="MeetUp - Prototipado con Sketch 49 | Laboratoria · 19 de Abril de 2018 · 19:00Hrs">
+  <meta name="twitter:title" content="Sketch MeetUp | Sistemás de Diseño">
+  <meta name="twitter:description" content="MeetUp - Sistemás de Diseño | Centraal · 22 de Junio de 2018 · 19:00Hrs">
   <meta name="twitter:creator" content="@hellomysketch" />
   <meta name="twitter:image:src" content="http://hellosketch.com/public/img/meetup/isotipo.jpg"/>    
   <meta name="twitter:domain" content="hellosketch.com" />
   
 	<!-- Facebook Open Graph -->
   <meta property="og:type" content="website"/>
-  <meta property="og:title" content="Sketch MeetUp | Prototipado con Sketch 49"/>
-  <meta property="og:description" content="MeetUp - Prototipado con Sketch 49 | Laboratoria · 19 de Abril de 2018 · 19:00Hrs"/>
+  <meta property="og:title" content="Sketch MeetUp | Sistemás de Diseño"/>
+  <meta property="og:description" content="MeetUp - Sistemás de Diseño | Centraal · 22 de Junio de 2018 · 19:00Hrs"/>
   <meta property="og:url" content="http://hellosketch.com/meetup"/>
   <meta property="og:image" content="http://hellosketch.com/public/img/meetup/isotipo.jpg"/>
   <meta property="og:site_name" content="hellosketch.com" />
 
 <!-- 
 
-	Theme Name: MeetUp - Prototipado con Sketch 49 | Laboratoria · 19 de Abril de 2018 · 19:00Hrs
+	Theme Name: MeetUp - Sistemás de Diseño | Centraal · 22 de Junio de 2018 · 19:00Hrs
 	Theme URI: http://hellosketch.com/meetup
 	Author: @elnodos
 	Author Contact: hello@migue.design
@@ -42,19 +42,24 @@
 <body>
 	<section class="Info">
 		<h2 class="Info_Name">Sketch&Design CDMX</h2>
-		<h1 class="Info_Title">Prototipado <span>en Sketch 49</span></h1>
-		<h3 class="Info_Date"><div>19 de Abril </div> <span>-</span> <div> 7:00 PM</div></h3>
-		<h3 class="Info_Address">Laboratoria <small>Tonalá 30, Col. Roma Norte, CDMX, México</small></h3>
+		<h1 class="Info_Title">Sistemas de <span>Diseño</span></h1>
+		<h3 class="Info_Date"><div>22 de Junio </div> <span>-</span> <div> 7:00 pm</div></h3>
+		<h3 class="Info_Venue">Centraal</h3>
+		<p class="Info_Address">Zamora 187, Condesa, CDMX, México</p>
 	</section>
 
 	<section class="Sidebar">
 		<h3 class="Sidebar_Title">Regístrate</h3>
-			<p class="Sidebar_Slots">Quedan pocos slots disponibles.</p>
+			<p class="Sidebar_Slots">Completa el siguiente formulario y asegura un lugar para asistir al meetup en Centraal.</p>
 
 		<form accept-charset="UTF-8" action="https://usebasin.com/f/0a528b3bba4e" method="POST" class="Form" id="form">
 			<div class="Form_Item">
 				<label for="Nombre">Nombre</label>
 				 <input type="text" id="Nombre" name="Nombre" required>
+			</div>
+			<div class="Form_Item">
+				<label for="Apellido">Apellido</label>
+				 <input type="text" id="Apellido" name="Apellido" required>
 			</div>
 			<div class="Form_Item">
 				<label for="Correo">Correo electrónico</label>
@@ -63,19 +68,19 @@
 			<div class="Form_Item">
 				<label>¿Asististe al meetup anterior?</label>
 				<div class="Form_Item_Sub">
-					<input type="radio" id="prev-si" name="Meetup_Beta" value="Si" class="prev" onclick="openFrom()">
+					<input type="radio" id="prev-si" name="Meetup_1" value="Si" class="prev">
 					<div class="checkmark"></div>
 					<label for="prev-si">Si</label>
 				</div>
 
 				<div class="Form_Item_Sub">
-					<input type="radio" id="prev-no" name="Meetup_Beta" value="No" class="prev" onclick="openFrom2()">
+					<input type="radio" id="prev-no" name="Meetup_1" value="No" class="prev">
 					<div class="checkmark"></div>
 					<label for="prev-no">No</label>
 				</div>
 			</div>
 			<div class="Form_Item">
-				<button type="submit" form="form" value="Submit">Regístrame al meetup</button>
+				<button type="submit" form="form" value="Submit" class="cta">Regístrame al Meetup</button>
 			</div>
 		</form>
 	</section>
@@ -83,18 +88,14 @@
 	<div class="Modal" id="Modal">
 	  <div class="Modal__container other" id="Modal__container">
 	  	<div class="Modal__close"><a href="#close" class="btn t_caption">CERRAR</a></div>
-
-	  		<div class="Modal__Img">
-	  			<img src="../public/img/meetup/gema.svg" alt="Hello Sketch">
-	  		</div>
 	  	 <h2 class="Modal__Title">¡Gracias por registrarte!</h2>
-	  	 <h4>Nos vemos el 19 de abril.</h4>
+	  	 <p>Nos vemos el 22 de Junio en Centraal <br> #SketchMX</p>
+	  	 <a href="https://www.facebook.com/groups/209005702967958/?ref=hellosketch.com" class="cta" target="_blank">ÚNETE AL GRUPO DE FACEBOOK</a>
 	  	 <br>
 	  	 <small>
 		  	 <a href="https://twitter.com/elnodos" class="t-link t-link-mini">Migue</a> ·
 		  	 <a href="https://twitter.com/noyonosoyesa" class="t-link t-link-mini">Jay</a> ·
-		  	 <a href="https://twitter.com/senorita_0" class="t-link t-link-mini">Clem</a> · 
-			 <a href="https://twitter.com/omartosca" class="t-link t-link-mini">Omar</a>
+		  	 <a href="https://twitter.com/senorita_0" class="t-link t-link-mini">Clem</a>
 	  	 </small>
 	  	 
 	  </div>
@@ -105,19 +106,9 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="../public/js/vendor/jquery-2.1.4.min.js"><\/script>')</script>
 	<script type='text/javascript' src="../public/js/main.js" async></script>
-
 	
 	<script src="https://usebasin.com/f/0a528b3bba4e/ahoy.js" async defer></script>
 
-	<script type="text/javascript">
-		function openFrom() {
-			window.open('https://docs.google.com/forms/d/e/1FAIpQLScme8ro6iX_7N2HSQZuQf7_ISZvHcNKQkNy5nS3vrwtqs3YMw/viewform','_blank');
-		}
-		function openFrom2() {
-			window.open('https://docs.google.com/forms/d/e/1FAIpQLSfYrw2jQnDjQtEprkQDY4nDqdrC5bnXylui680d5fQChMixNQ/viewform','_blank');
-		}
-
-	</script>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-90120013-1"></script>
 	<script>
