@@ -28,8 +28,17 @@
 	  <meta property="og:site_name" content="hellosketch.com" />
 </head>
 <body>
-	<script>
+	<!-- <script>
 		window.location = "/meetup/";
+	</script> -->
+	<script>
+		if (document.location.protocol =! 'https:') {
+			// location.href ="https://hellosketch.com";
+			console.log('no es https');
+		}
+		else{
+			console.log('es https');
+		}
 	</script>
 </body>
 </html>
