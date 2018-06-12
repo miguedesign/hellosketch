@@ -39,7 +39,9 @@
  -->
 
 <script>
-	location.href ="https://hellosketch.com";
+	if (document.location.protocol =! 'https:') {
+		location.href ="https://hellosketch.com";
+	}
 </script>
 
 </head>
