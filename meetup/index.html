@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, minimum-scale=1.0, user-scalable=no">
 	<link rel="shortcut icon" href="../public/img/meetup/favicon.png" />
 	<link rel="icon" sizes="192x192" href="../public/img/meetup/favicon.png">
-	<link href='https://fonts.googleapis.com/css?family=Rubik:300,400,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Poppins:400,700,900' rel='stylesheet' type='text/css'>
 	<meta name="description" content="MeetUp - Sistemás de Diseño | Centraal · 22 de Junio de 2018 · 19:00Hrs">
 	<link rel="stylesheet" href="../public/css/style.css">
 
@@ -17,21 +17,21 @@
   <meta name="twitter:title" content="Sketch MeetUp | Sistemás de Diseño">
   <meta name="twitter:description" content="MeetUp - Sistemás de Diseño | Centraal · 22 de Junio de 2018 · 19:00Hrs">
   <meta name="twitter:creator" content="@hellomysketch" />
-  <meta name="twitter:image:src" content="http://hellosketch.com/public/img/meetup/isotipo.jpg"/>    
+  <meta name="twitter:image:src" content="https://hellosketch.com/public/img/meetup/isotipo.jpg"/>    
   <meta name="twitter:domain" content="hellosketch.com" />
   
 	<!-- Facebook Open Graph -->
   <meta property="og:type" content="website"/>
   <meta property="og:title" content="Sketch MeetUp | Sistemás de Diseño"/>
   <meta property="og:description" content="MeetUp - Sistemás de Diseño | Centraal · 22 de Junio de 2018 · 19:00Hrs"/>
-  <meta property="og:url" content="http://hellosketch.com/meetup"/>
-  <meta property="og:image" content="http://hellosketch.com/public/img/meetup/isotipo.jpg"/>
+  <meta property="og:url" content="https://hellosketch.com/meetup"/>
+  <meta property="og:image" content="https://hellosketch.com/public/img/meetup/isotipo.jpg"/>
   <meta property="og:site_name" content="hellosketch.com" />
 
 <!-- 
 
 	Theme Name: MeetUp - Sistemás de Diseño | Centraal · 22 de Junio de 2018 · 19:00Hrs
-	Theme URI: http://hellosketch.com/meetup
+	Theme URI: https://hellosketch.com/meetup
 	Author: @elnodos
 	Author Contact: hello@migue.design
 	Copyright 2017
@@ -53,18 +53,28 @@
 			<p class="Sidebar_Slots">Completa el siguiente formulario y asegura un lugar para asistir al meetup en Centraal.</p>
 
 		<div class="Form">
-			<form accept-charset="UTF-8" action="https://usebasin.com/f/3337ba5f3d78" method="POST" class="Form" id="form">
+			<form
+					id="mc-embedded-subscribe-form"
+					action="https://keyicons.us17.list-manage.com/subscribe/post-json?u=d3c068cd317e0aa4794014206&id=7b187a1c2c"
+					method="get"
+					name="mc-embedded-subscribe-form"
+					class="Form"
+					novalidate>
 				<div class="Form_Item">
-					<label for="Nombre">Nombre</label>
-					 <input type="text" id="Nombre" name="Nombre" required>
+					<label for="FNAME">Nombre</label>
+					 <input type="text" id="FNAME" name="FNAME"
+					 data-msg-required="👆 Tu Nombre es inportante para el registro."
+					 required>
 				</div>
 				<div class="Form_Item">
-					<label for="Apellido">Apellido</label>
-					 <input type="text" id="Apellido" name="Apellido" required>
+					<label for="LNAME">Apellido</label>
+					 <input type="text" id="LNAME" name="LNAME"
+					 data-msg-required="👆 Tu Apellido es inportante para el registro."
+					 required>
 				</div>
 				<div class="Form_Item">
-					<label for="Correo">Correo electrónico</label>
-					<input type="email" id="Correo" name="Correo" required>
+					<label for="mce-EMAIL">Correo electrónico</label>
+					<input type="email" id="mce-EMAIL" name="EMAIL" data-msg-required="👆 Tu Correo es importante para el registro." data-msg-email="👀 Por favor agrega una dirección de correo valida."  required>
 				</div>
 				<div class="Form_Item d_none">
 					<label>¿Asististe al meetup anterior?</label>
@@ -81,8 +91,9 @@
 					</div>
 				</div>
 				<div class="Form_Item">
-					<button type="submit" form="form" value="Submit" class="cta">Regístrame al Meetup</button>
+					<button type="submit" form="form" value="Submit" class="cta" id="mc-embedded-subscribe">Regístrame al Meetup</button>
 				</div>
+				<div id="resultElement"></div>
 			</form>
 			
 		</div>
@@ -109,9 +120,9 @@
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="../public/js/vendor/jquery-2.1.4.min.js"><\/script>')</script>
-	<script type='text/javascript' src="../public/js/main.js" async></script>
-	
-	<script src="https://usebasin.com/f/0a528b3bba4e/ahoy.js" async defer></script>
+	<script type='text/javascript' src="../public/js/vendor/jquery.validate.min.js" async></script>
+	<script type='text/javascript' src="../public/js/main.js?v=1.1" async></script>
+
 
 
 	<script type="text/javascript">
@@ -127,15 +138,28 @@
 
 	</script>
 
+<!-- Hotjar Tracking Code for https://hellosketch.com -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:912505,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
 
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-90120013-1"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
 
-	  gtag('config', 'UA-90120013-1');
-	</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-90120013-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-90120013-1');
+</script>
+	
 </body>
 </html>

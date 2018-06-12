@@ -52,7 +52,7 @@ body
 
 .Sidebar
 	background white_color
-	padding 30px
+	padding 30px 20px
 	text-align left
 	&_Title
 		font-size 30px 
@@ -73,18 +73,19 @@ body
 		margin-bottom 5px
 		
 	input
-		line-height 60px
+		line-height 40px
 		text-indent 10px
 		display block
 		width 100%
 		border solid 2px rgba(dark_color_m, .2)
 		font-weight 400
 		font-size 16px
+		padding 0
 		transition_all(.3s)
 		border-radius 4px
 		color black_color_m
 		&:focus
-			background rgba(black_color_m, .01)
+			background rgba(black_color_m, .05)
 			outline none
 			border-color transparent
 			box-shadow 0 5px 40px -6px rgba(dark_color_m, .5)
@@ -149,6 +150,19 @@ body
 					height 10px
 					border-radius 50%
 					background white_color
+
+/*===============*/
+#FNAME-error,
+#LNAME-error,
+#mce-EMAIL-error
+	font-weight 600 
+	color red
+	letter-spacing .5px
+	display none
+	font-size 12px
+	
+
+
 					
 .button,
 .cta
@@ -169,7 +183,18 @@ body
 	&:focus
 		outline none
 		box-shadow 0 0 0 5px rgba(acent_color_m, .4)
-						
+	&.is-sending
+		overflow hidden
+		&::after
+			content ''
+			display block
+			top 0 
+			height 100%
+			animation progressing 1s infinite ease-in-out
+			transition_all(.3s)
+			background rgba(black_color_m, .9)
+			position absolute
+		
 @media only screen and (min-width : 325px)
 	.Info
 	.Sidebar
@@ -251,6 +276,10 @@ body
 	
 	.Form
 		margin-top 20px
+		input
+			line-height 55px
+			&:focus
+				background rgba(black_color_m, .01)
 		
 	.button,
 	.cta
@@ -302,3 +331,15 @@ body
 
 	.Form
 		margin-top 80px
+
+@keyframes progressing
+	0%
+		width 1px
+		left -20px
+	50%
+		width 100%
+	51%
+		left initial
+	100%
+		right 0
+		width 0
