@@ -1,188 +1,186 @@
-body
-	color black_color_m
-	background acent_color_m
+/*======== Electron =======*/
+Atom_radius = 30px
+Electron_radius =  5px
 
-.Info
-	background-image url('../img/meetup/ds.jpg')
-	background-position center bottom
+circle(radio)
+	border-radius 50%
+	width (radio * 2)
+	height (radio * 2)
+			
+@keyframes orbita
+	0%
+		transform rotateZ(0deg) translateX(Atom_radius)
+	100%
+		transform rotateZ(360deg) translateX(Atom_radius)
+		
+/*===============*/
+
+body
+	color white_color
+	background-color black_color_m
+	font-family tipography
+	
+	
+.js_show
+	transition_all(1s)
+	opacity 0
+	&.show-1
+		transition-delay .2s
+	&.show-2
+		transition-delay .4s
+	&.show-3
+		transition-delay .6s
+	&.show-4
+		transition-delay .8s
+	&.is-load
+		opacity 1
+
+.js_scale
+	// margin-top -200px
+	transform scale(0)
+	transition_all(1s)
+	&.is-load
+		margin-top 0
+		transform scale(1)
+		
+
+		
+.Main
+	padding 30px
+	background-image url('../img/meetup/bg-atomic.png')
+	background-position center 0
 	background-repeat no-repeat
 	background-size 100%
-	color white_color
-	overflow hidden
-	padding 30px
-	position relative
-	text-align left
+	height 100vh
+	transition_all(1s)
+	opacity 0
+	&.is-load
+		opacity 1
 		
-		
-	
 	&_Name
-		font-size 20px
-		padding 10px
+		font-size 40px
+		margin-top 120px
+		position relative
 		font-weight 900
-		background white_color
-		text-transform uppercase
-		display inline-block
-		text-align center
-		color black_color_m
-		
-		
+		&_Icon
+			border solid 1px white_color
+			circle(Atom_radius)
+			left 50%
+			margin-left -(Atom_radius)
+			position absolute
+			top -(Atom_radius*2.5)
+			&::after
+				content ''
+				display block
+				circle( Electron_radius )
+				position absolute
+				top (Atom_radius - Electron_radius)
+				left (Atom_radius - Electron_radius)
+				background-color white_color
+				animation orbita 2s infinite linear
+			&::before
+				content ''
+				display block
+				circle( Electron_radius*2 )
+				position absolute
+				top (Atom_radius - (Electron_radius*2))
+				left (Atom_radius - (Electron_radius*2))
+				background-color white_color
+			
+			
+			 
 	&_Title
-		font-weight 700
-		font-size 42px
-		margin-top 30px
-		line-height 1
+		font-family tipography2
+		font-size 24px
+		font-style italic
+		font-weight 100
 		
-	&_Date
-		font-weight 700
-		margin-top 50px
-		font-size 24px
-		div 
-			display block
-			margin-bottom 5px
-		span
-			display none
-	&_Venue
-		margin-top 10px
-		font-size 24px
-		font-weight 700
-	&_Address
-			font-size 18px
-			margin 0
-			font-weight 400
 
-.Sidebar
-	background white_color
-	padding 30px 20px
-	text-align left
-	&_Title
-		font-size 30px 
-		margin-bottom 10px
-		font-weight 900
-	&_Slots
-		font-size 16px
-		margin-top 10px
-		font-weight 400
-		
 .Form
-	margin-top 50px
-	color dark_color_m
+	margin 80px auto 0
+	display block
+	max-width 750px
 	
-	label 
-		display block	
-		font-size 14px
-		margin-bottom 5px
-		
 	input
-		line-height 40px
+		background rgba(white_color, .1)
+		border solid 2px transparent
+		border-radius 4px
+		display inline-block
+		font-size 16px
+		font-weight 400
+		line-height 36px
 		text-indent 10px
+		width 100%
+		margin 0 auto 20px
+		transition_all(.3s)
+		color white_color
+		&:focus
+			border solid 2px rgba(white_color, 1)
+			outline none
+			// box-shadow 0 5px 40px -6px rgba(dark_color_m, .5)
+			
+	&_Title
+		font-size 18px
+		font-weight 700
+		display block
+		line-height 42px
+		text-align center
+	&_Item
+		text-align left
 		display block
 		width 100%
-		border solid 2px rgba(dark_color_m, .2)
-		font-weight 400
-		font-size 16px
-		padding 0
-		transition_all(.3s)
-		border-radius 4px
-		color black_color_m
-		&:focus
-			background rgba(black_color_m, .05)
-			outline none
-			border-color transparent
-			box-shadow 0 5px 40px -6px rgba(dark_color_m, .5)
-			
-		&:checked
-			background red
-	
-	
-	&_Item
-		display block
-		margin 20px 0 30px
-		&_Sub
-			display inline-block
-			width 48%
+		vertical-align top
+		&_container 
 			position relative
-			cursor pointer
-			height 24px
-			user-select none
-			&:hover input ~ .checkmark
-				background rgba(dark_color_m, .9)
-				
-			label
-				line-height 24px
-				width 100%
-				padding-left 35px
-				z-index 10
-				position absolute
-				font-weight 700
-				font-size 20px
-			label
-			input
-				display inline-block
-			input
-				width 24px
-				margin 0 5px 0
-				height 24px
-				border-radius 50%
-				position absolute
-				opacity 0
-				&:checked ~ .checkmark
-					background dark_color_m
-					
-				&:checked ~ .checkmark:after
-					display block
-					
-					
-			.checkmark
-				position absolute
-				width 24px
-				height 24px
-				top 0
-				left 0
-				background rgba(dark_color_m, .2)
-				border-radius 50%
-				&:after
-					content ''
-					display none
-					position absolute
-					top 7px
-					left 7px
-					width 10px
-					height 10px
-					border-radius 50%
-					background white_color
+			display inline-block
+			width 100%
+			
+		
+		&.Item-1
+			margin 0
+		// &.Item-2
+		
 
 /*===============*/
 #FNAME-error,
 #LNAME-error,
 #mce-EMAIL-error
-	font-weight 600 
-	color red
+	font-weight 400
+	color #FF2B67
 	letter-spacing .5px
 	display none
 	font-size 12px
+	// position absolute
+	// bottom -40px
+	// background rgba(white_color, .2)
+	// left 0
+	// padding 10px
+	// border-radius 4px
+	// width 280px
 	
 
 
-					
-.button,
-.cta
-	background acent_color_m
-	border none
+// .button,
+.btn
+	background white_color
+	border solid 1px white_color
 	border-radius 4px
-	color white_color
-	display block
+	color dark_color_m
+	display inline-block
+	font-size 15px
 	font-weight 900
-	line-height 60px
+	line-height 36px
 	margin 0 auto
 	position relative
 	text-transform uppercase
 	width 100%
-	max-width 500px
 	z-index 10
 	transition_all(.3s)
 	&:focus
 		outline none
-		box-shadow 0 0 0 5px rgba(acent_color_m, .4)
+		box-shadow 0 0 0 4px rgba(white_color, .4)
+		background rgba(white_color, .8)
+		border-color rgba(white_color, .8)
 	&.is-sending
 		overflow hidden
 		&::after
@@ -194,144 +192,24 @@ body
 			transition_all(.3s)
 			background rgba(black_color_m, .9)
 			position absolute
+
+.Footer
+	padding 20px 0
+	margin-top 40px
+	&_Item
+		width 100%
+		display inline-block
+		margin-bottom 40px
+	&_Link
+		color acent_color_m
+	a
+		opacity .7
+		&:focus
+			color acent_color_m
 		
-@media only screen and (min-width : 325px)
-	.Info
-	.Sidebar
-		padding 45px
 
-@media only screen and (min-width : 768px)
-	.Info
-		&_Title
-			font-size 90px
-			span
-				font-size 90px
-		&_Date
-		&_Venue
-			font-size 48px
-			small
-				font-size 24px
-			
-			
-	.Form
-		margin-top 75px
-		input
-			font-size 24px
-						
 
-@media only screen and (min-width : 910px)
-	.Info
-		padding 70px
-		padding-right 45%
-		height 100%
-		height 100vh
-		&::after
-			right 30%
-			bottom 0
-			width 550px
-			height 550px
-		
-		&_Title
-			font-size 72px
-			span
-				font-size 72px
-				
-		&_Date
-			font-size 32px
-			margin-top 150px
-			span
-				display inline-block
-			div
-				display inline-block
-		
-	.Sidebar
-		position absolute
-		right 0
-		top 0
-		height 100%
-		height 100vh
-		padding 70px 30px
-		width 400px
-	
-
-@media only screen and (min-width : 1024px)
-	.Info
-		&_Title
-			font-size 72px
 			
-		&_Venue
-		&_Date
-			font-size 40px
-			
-		&_Venue
-			margin-top 0
-			
-		&_Date
-			margin-top 170px
-		
-	.Sidebar
-		padding 70px 40px
-		&_Title
-			font-size 24px
-	
-	.Form
-		margin-top 20px
-		input
-			line-height 55px
-			&:focus
-				background rgba(black_color_m, .01)
-		
-	.button,
-	.cta
-		&:hover
-			background black_color_m
-			box-shadow 0 0 40px -5px rgba(black_color_m, .3)
-			
-	
-	
-
-		
-@media only screen and (min-width : 1200px)
-	.Info 
-		background-position left center
-		background-size 70%
-		padding-top 40px
-		padding-left 80px
-		padding-right 35%
-		&::after
-			background-position center bottom
-			background-size 400px
-			
-		&_Title
-			font-size 100px
-			span
-				font-size 100px
-		&_Date
-			font-size 30px
-		&_Venue
-			font-size 50px
-			
-	.Sidebar
-		padding 40px 70px
-		width 35%
-		&_Title
-			font-size 30px
-		&_Slots
-			font-size 18px
-
-@media only screen and (min-width : 1600px)
-	.Info 
-		padding-top 140px
-		padding-left 200px
-		&_Title
-			font-size 110px
-			
-	.Sidebar
-		padding 140px 80px
-
-	.Form
-		margin-top 80px
-
 @keyframes progressing
 	0%
 		width 1px
@@ -343,3 +221,80 @@ body
 	100%
 		right 0
 		width 0
+
+
+
+
+@media only screen and (min-width : 768px)
+	.Main
+		&_Name
+			font-size 124px
+			margin-top 12%
+		&_Title
+			font-size 30px
+		
+	.Form
+		margin 60px auto 0
+		
+		input
+			width 200px
+		&_Title
+			text-align left
+			display inline-block
+		&_Item
+			width 48%
+			display inline-block
+			&_container 
+				display inline-block
+				position relative
+				width auto
+				width 200px
+				vertical-align top
+			&.Item-1
+				margin 0
+			&.Item-2
+				input
+					border-radius 4px 0 0 4px
+				.btn
+					margin-left -5px
+				
+					
+	.btn
+		width 100px
+		border-radius 0 4px 4px 0
+		
+			
+	.Footer
+		position absolute
+		bottom 0
+		width 100%
+		padding 0
+		text-align left
+		&_Item
+			width 32%
+			margin-bottom 20px
+			&:nth-child(1),
+			&:nth-child(3)
+				p
+					font-size 20px
+					color rgba(white_color, .3)
+			&:nth-child(1)
+				text-align left
+				 
+			&:nth-child(3)
+				text-align right
+			
+@media only screen and (min-width : 1024px)
+	.btn
+		&:hover
+			background rgba(white_color, .8)
+			border-color rgba(white_color, .8)
+		
+
+
+
+
+
+
+
+

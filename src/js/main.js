@@ -1,9 +1,9 @@
 /*!
 	Theme Name: HELLO my sketch is | @hellomysketch : Diseño de productos digitales pixel a pixel.
 	Theme URI: http://hellomysketchis.com
-	Author: @mishortcut
-	Author URI: http://minz.design
-	Author Contact: hello@minz.design
+	Author: @elnodos
+	Author URI: http://migue.design
+	Author Contact: hello@migue.design
 	Description: Diseño de productos digitales pixel a pixel.
 	Version: 2.0
 
@@ -23,7 +23,7 @@ var easing = require('./vendor/easing');
 
 // var topbar = require('./libs/topbar');
 
-// var hero = require('./libs/hero');
+var hero = require('./libs/hero');
 
 // var sticknav = require('./libs/sticknav');
 
@@ -37,7 +37,7 @@ var register = require('./libs/register');
 jQuery(document).ready(function($) {
 
 	register();
-	// hero();
+	hero();
 
 	// scrolled();
   

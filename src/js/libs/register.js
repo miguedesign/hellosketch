@@ -1,5 +1,7 @@
 var register = function(){
 
+	$('#FNAME').focus();
+	
 	var modal = $('#Modal'),
 			container = $('#Modal__container');
 
