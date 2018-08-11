@@ -4,12 +4,12 @@
 	overflow hidden
 	position fixed 
 	top 0
-	background rgba(black_color, .6)
+	background rgba(black_color_m, .8)
 	width 100%
 	z-index 10001
 	display none
 	&.is-active
-		background rgba(black_color, .6)
+		background rgba(black_color_m, .8)
 		display block
 		
 	&__close
@@ -36,7 +36,7 @@
 				width 40%
 				position absolute
 				height 2px
-				background black_color
+				background rgba(white_color, 0.6)
 			&:before
 				transform rotate(45deg)
 				top 17px
@@ -47,8 +47,8 @@
 				left 12px
 				
 	&__container
-		background-color white_color
-		background-image url('../img/meetup/ds-modal.jpg')
+		background-color #1A1720
+		// background-image url('../img/meetup/ds-modal.jpg')
 		background-position top center
 		background-repeat no-repeat
 		background-size cover
@@ -89,7 +89,21 @@
 	display block
 	z-index -1
 	
-
+.cta
+	background white_color
+	border solid 1px white_color
+	border-radius 4px
+	color dark_color_m
+	display inline-block
+	font-size 15px
+	font-weight 900
+	line-height 36px
+	margin 10px auto 30px
+	padding 5px 20px
+	position relative
+	transition_all(.3s)
+	z-index 10
+	
 
 @media screen and (min-width: 1025px)
 	.Modal

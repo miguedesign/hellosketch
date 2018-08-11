@@ -87,8 +87,7 @@ body
 				left (Atom_radius - (Electron_radius*2))
 				background-color white_color
 			
-			
-			 
+				
 	&_Title
 		font-family tipography2
 		font-size 24px
@@ -161,7 +160,7 @@ body
 
 
 // .button,
-.btn
+.send
 	background white_color
 	border solid 1px white_color
 	border-radius 4px
@@ -172,7 +171,6 @@ body
 	line-height 36px
 	margin 0 auto
 	position relative
-	text-transform uppercase
 	width 100%
 	z-index 10
 	transition_all(.3s)
@@ -230,6 +228,11 @@ body
 		&_Name
 			font-size 124px
 			margin-top 12%
+			&_Icon
+				&.Icon_Modal
+					top 40px
+					
+
 		&_Title
 			font-size 30px
 		
@@ -241,25 +244,27 @@ body
 		&_Title
 			text-align left
 			display inline-block
+			margin 0 20px 0 0
 		&_Item
 			width 48%
 			display inline-block
+			text-align center
 			&_container 
 				display inline-block
 				position relative
-				width auto
 				width 200px
 				vertical-align top
 			&.Item-1
 				margin 0
+				width 50.5%
 			&.Item-2
 				input
 					border-radius 4px 0 0 4px
-				.btn
+				.send
 					margin-left -5px
 				
 					
-	.btn
+	.send
 		width 100px
 		border-radius 0 4px 4px 0
 		
@@ -267,7 +272,7 @@ body
 	.Footer
 		position absolute
 		bottom 0
-		width 100%
+		width calc(100% - 80px)
 		padding 0
 		text-align left
 		&_Item
@@ -281,11 +286,14 @@ body
 			&:nth-child(1)
 				text-align left
 				 
+			&:nth-child(2)
+				text-align center
+				
 			&:nth-child(3)
 				text-align right
 			
 @media only screen and (min-width : 1024px)
-	.btn
+	.send
 		&:hover
 			background rgba(white_color, .8)
 			border-color rgba(white_color, .8)

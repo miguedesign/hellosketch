@@ -99,7 +99,7 @@ var register = function(){
 					} else {
 						$resultElement.removeClass("is-error").addClass("is-success");
 						// lanzar el modal
-						window.location = "./?r=ok";
+						window.location = "?r=chingon";
 						
 					}
 				}
