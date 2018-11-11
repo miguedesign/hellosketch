@@ -24,6 +24,29 @@ var hero = function(){
 
 	}, 2000);
 
+
+	cambiarBG();
+
+	function cambiarBG(){
+		
+		setTimeout(function(){
+			
+			$('.Handoff').addClass('Preload');
+		
+		}, 300);
+
+		setTimeout(function(){
+			$('.Handoff').addClass('Load');
+			$('.Content').addClass('Load');
+		}, 1500);
+
+		setTimeout(function(){
+			$('.Register').addClass('Load');
+			$('.Sponsors').addClass('Load');
+		}, 3000);
+
+	}
+
  
 
 }

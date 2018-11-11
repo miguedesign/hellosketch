@@ -1,7 +1,22 @@
 var register = function(){
 
-	$('#FNAME').focus();
-	
+	// $('#FNAME').focus();
+
+	$('.Register_Title').on('click', function(){
+				$('#FNAME').focus();
+			});
+
+	$('#mce-EMAIL, #FNAME').change(function(){
+		$('.Label').addClass('valid');
+		datos();
+	});
+
+	function datos(){
+		if ($('#FNAME').val() == '') {
+			$('.Label').removeClass('valid');
+		}
+	}
+
 	var modal = $('#Modal'),
 			container = $('#Modal__container');
 
@@ -61,6 +76,7 @@ var register = function(){
 			else{
 				// console.log('no valid');
 				$('#mce-EMAIL').focus();
+				$('#mce-LABEL').addClass('invalid');
 				submit.removeClass('is-sending');
 
 			}
