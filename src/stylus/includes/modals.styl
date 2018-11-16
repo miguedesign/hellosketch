@@ -1,26 +1,25 @@
 .Modal
-	height 100%
-	left 0 
+	background-color dark_color_m
+	height 0
 	overflow hidden
-	position fixed 
-	top 0
-	background rgba(black_color_m, .8)
-	width 100%
-	z-index 10001
-	display none
-	&.is-active
-		background rgba(black_color_m, .8)
-		display block
-		
+	padding 0
+	position relative
+	shadow_custom(0px, 35px, 60px, -12px, .9)
+	text-align center
+	transform scale(0)
+	opacity 0
+	transition_all(.2s)
+	z-index -1000
 	&__close
 		width 40px
 		height 40px
 		z-index 100
 		position absolute
-		top 10px
+		top 50%
 		right 10px
 		text-align center
 		border-top solid thin divider_color
+		margin-top - 20px
 		&>.btn
 			height 100%
 			position relative
@@ -45,76 +44,133 @@
 				transform rotate(-45deg)
 				top 17px
 				left 12px
-				
-	&__container
-		background-color #1A1720
-		// background-image url('../img/meetup/ds-modal.jpg')
-		background-position top center
-		background-repeat no-repeat
-		background-size cover
-		width 90%
-		display block 
-		margin 5% auto
-		height 90%
-		max-height 400px
-		shadow_custom(0px, 35px, 60px, -12px, .3)
-		position relative
-		border-radius 4px
-		padding-top 130px
-		padding-left 40px
-		padding-right 40px
-		&::after
-			position absolute
-			bottom 40px
-			left 0
-			width 98%
-			height 50px
-			display block
-			content ''
-			bg_gradient(rgba(white_color, 0), white_color)
-		
-	&__Title
+	&__Check
 		display inline-block
-		font-weight 
-		font-size 30px
-	&__Img
-		width 100px
-		margin 100px auto 20px
-.close-modal	
-	position absolute
-	top 0
-	left 0
-	width 100%
-	height 100%
-	display block
-	z-index -1
+		vertical-align middle
+		width 35px
+		height 35px
+		border-radius 50%
+		background-color white_color
+		position relative
+		margin-right 10px
+		&::after
+			content ''
+			display block
+			border-bottom solid 3px dark_color_m
+			border-left solid 3px dark_color_m
+			width 15px
+			height 7px
+			position absolute
+			left 9px
+			top 11px
+			transform rotate(-45deg)
+			z-index 1
+		&::before
+			background-color rgba(white_color, .3)
+			border-radius 50%
+			content ''
+			display block
+			height 45px
+			left -5px
+			position absolute
+			top -5px
+			width 45px
+			z-index 1
+			opacity 0
+			transition_all (.3s)
+	&.is-active
+		opacity 1
+		z-index 100
+		transform scale(1)
+		height 100%
+		padding 40px 0
+		transition_all(.3s)
+		.Modal
+			&__Check
+				animation palomita .5s ease-in-out .3s
+				animation-iteration-count 1
+				&:before 
+					opacity 1
+
+@keyframes palomita
+	0% 
+		transform scale(1)		
+	50%
+		transform scale(1.4)		
+	100%
+		transform scale(1)		
+		
+		
+						
+// 	&__container
+// 		background-color #1A1720
+// 		// background-image url('../img/meetup/ds-modal.jpg')
+// 		background-position top center
+// 		background-repeat no-repeat
+// 		background-size cover
+// 		width 90%
+// 		display block 
+// 		margin 5% auto
+// 		height 90%
+// 		max-height 400px
+// 		shadow_custom(0px, 35px, 60px, -12px, .3)
+// 		position relative
+// 		border-radius 4px
+// 		padding-top 130px
+// 		padding-left 40px
+// 		padding-right 40px
+// 		&::after
+// 			position absolute
+// 			bottom 40px
+// 			left 0
+// 			width 98%
+// 			height 50px
+// 			display block
+// 			content ''
+// 			bg_gradient(rgba(white_color, 0), white_color)
+		
+// 	&__Title
+// 		display inline-block
+// 		font-weight 
+// 		font-size 30px
+// 	&__Img
+// 		width 100px
+// 		margin 100px auto 20px
+// .close-modal	
+// 	position absolute
+// 	top 0
+// 	left 0
+// 	width 100%
+// 	height 100%
+// 	display block
+// 	z-index -1
 	
-.cta
-	background white_color
-	border solid 1px white_color
-	border-radius 4px
-	color dark_color_m
-	display inline-block
-	font-size 15px
-	font-weight 900
-	line-height 36px
-	margin 10px auto 30px
-	padding 5px 20px
-	position relative
-	transition_all(.3s)
-	z-index 10
+// .cta
+// 	background white_color
+// 	border solid 1px white_color
+// 	border-radius 4px
+// 	color dark_color_m
+// 	display inline-block
+// 	font-size 15px
+// 	font-weight 900
+// 	line-height 36px
+// 	margin 10px auto 30px
+// 	padding 5px 20px
+// 	position relative
+// 	transition_all(.3s)
+// 	z-index 10
 	
 
-@media screen and (min-width: 1025px)
-	.Modal
-		&__container
-			height 400px
-			margin-top -200px
-			top 50%
-			position absolute
-			left 50%
-			margin-left -250px
-			max-width 500px
+// @media screen and (min-width: 1025px)
+// 	.Modal
+// 		&__container
+// 			height 400px
+// 			margin-top -200px
+// 			top 50%
+// 			position absolute
+// 			left 50%
+// 			margin-left -250px
+// 			max-width 500px
 			
 
 

@@ -35,9 +35,11 @@ var register = require('./libs/register');
 
 
 jQuery(document).ready(function($) {
-
-	register();
-	hero();
+	
+	setTimeout(function(){
+		register();
+		hero();
+	},2000);
 
 	// scrolled();
   

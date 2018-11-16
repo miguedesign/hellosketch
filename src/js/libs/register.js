@@ -32,7 +32,7 @@ var register = function(){
 	
 	if (r == 'ok') {
 
-		console.log('registro ok');
+		// console.log('registro ok');
 
 		modal.fadeIn(400,'easeInOutCubic').addClass('is-active');
 
@@ -40,8 +40,9 @@ var register = function(){
 
 	function closeModal(){
     container.slideUp(500, 'easeInOutCubic');
-		modal.fadeOut(1000,'easeInOutCubic').removeClass('is-active');
+		modal.fadeOut(300,'easeInOutCubic').removeClass('is-active');
 
+		$('.Form').removeClass('is-hide');
 		$('#mce-EMAIL').val('');
 		$('#FNAME').val('');
 		$('#LNAME').val('');
@@ -64,26 +65,32 @@ var register = function(){
 			e.preventDefault();
 			// console.log('clicked');
 
-			$(this).addClass('is-sending');
+			$(this).addClass('is-sending').attr('disabled', true);
 
 			$form.validate();
 			if ($form.valid()) {
-				// console.log('valid');
+				
+				// console.log('Enviando formulario');
+				$('#mce-LABEL').removeClass('invalid');
 				
 				submitSubscribeForm($form, $resultElement);
+				// submitSubscribeForm($resultElement);
+
 
 			}
 			else{
 				// console.log('no valid');
 				$('#mce-EMAIL').focus();
 				$('#mce-LABEL').addClass('invalid');
-				submit.removeClass('is-sending');
+				submit.removeClass('is-sending').attr('disabled', false);;
 
 			}
 			
 		});
 
 		function submitSubscribeForm($form, $resultElement){
+
+			// console.log('casi success')
 			
 			$.ajax({
 				type: "GET",
@@ -98,24 +105,35 @@ var register = function(){
 				},
 				
 				success: function(data){
+					// console.log('data: ',data);
 					
-					submit.removeClass('is-sending');
+					submit.removeClass('is-sending').attr('disabled', false);
 
 					if (data.result != "success") {
-						var message = data.msg || "Lo sentimos, no es posible suscribirse. Por favor, inténtelo de nuevo.";
-						$resultElement.addClass("is-error").fadeIn();
-
+						var message = data.msg || "Lo sentimos, no es posible registrarse. Por favor, inténtelo de nuevo.";
+						
 						if (data.msg && data.msg.indexOf("already subscribed") >= 0) {
-							message = "<p>Ya te encuentras suscrito al MeetUp, ¡Gracias!.</p>";
-							$resultElement.removeClass("is-error").addClass("is-success").fadeIn();
+							message = "Revisamos y ya te encontrabas registrado al MeetUp, ¡Gracias!";
 						}
 
 						$resultElement.html(message);
+						$('.Form').addClass('is-hide');
+						$('#resultElement').addClass("is-success").fadeIn();
+						$('#Modal').fadeIn(400,'easeInOutCubic').addClass('is-active');
 
 					} else {
-						$resultElement.removeClass("is-error").addClass("is-success");
+						
+						$('.Form').addClass('is-hide');
+						$('#resultElement').addClass("is-success").fadeIn();
+						$('#Modal').fadeIn(400,'easeInOutCubic').addClass('is-active');
+
+
+						respuesta = data.result;
+						// console.log(respuesta);
+
+						// $resultElement.removeClass("is-error").addClass("is-success");
 						// lanzar el modal
-						window.location = "?r=ok";
+						// window.location = "?r=ok";
 						
 					}
 				}

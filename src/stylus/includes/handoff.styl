@@ -3,10 +3,10 @@ opacidad_2 = .2
 
 body
 	color white_color
-	background-color dark_color_m
+	background-color black_color_m
 
 .Handoff
-	background-color dark_color_m
+	background-color black_color_m
 	background-image url('../img/meetup/bg-handoff_mobile.png')
 	background-size auto 100%
 	background-position left center
@@ -44,6 +44,8 @@ body
 		font-family tipography2
 	p
 		opacity opacidad_1
+		font-family tipography2
+		
 	
 			
 			
@@ -68,6 +70,7 @@ body
 		z-index 10
 		border-bottom solid thin rgba(white_color, .2)
 		margin-bottom 5px
+		font-family tipography2
 		
 		.Label
 			display inline-block
@@ -131,6 +134,9 @@ body
 							opacity 1
 		
 	/*===============*/
+	#resultElement
+		display inline-block
+		vertical-align middle
 	#FNAME-error,
 	#LNAME-error,
 	#mce-EMAIL-error
@@ -142,35 +148,52 @@ body
 		
 	.cta
 		background white_color
+		border-radius 0
 		color dark_color_m
 		display inline-block
+		font-family tipography2
 		font-size 15px
 		font-weight 900
+		letter-spacing 1px
 		line-height 36px
 		margin 0 auto
-		position relative
-		width 100%
-		text-transform uppercase
-		border-radius 0
-		letter-spacing 1px
-		font-family tipography2
-		z-index 10
 		opacity opacidad_2
+		padding 10px 0
+		position relative
+		text-transform uppercase
+		width 100%
+		z-index 10
 		transition_all(.3s)
 		&:focus
 			opacity 1
 			outline none
 		&.is-sending
+			opacity 1
 			overflow hidden
+			cursor progress
 			&::after
 				content ''
 				display block
 				top 0 
 				height 100%
-				animation progressing 1s infinite ease-in-out
+				animation progressing 2s infinite ease-in-out
 				transition_all(.3s)
-				background rgba(black_color_m, .9)
+				background rgba(dark_color_m, .3)
 				position absolute
+
+@keyframes progressing
+	0%
+		width 0
+		left 0
+	50%
+		left initial
+		width 100%
+	100%
+		right 0
+		width 0
+		
+	
+
 				
 .Sponsors
 	display block
@@ -286,6 +309,11 @@ body
 			vertical(middle)
 			justify(between)
 			max-width 100%
+			transition_all(.4s)
+			&.is-hide
+				overflow hidden
+				height 0
+				padding 0
 		&_Title
 			display inline-block
 			col(3)
@@ -307,7 +335,6 @@ body
 	.Sponsors
 		justify(left)
 		vertical(middle)
-		padding 0
 		transition_all(5s)
 		opacity 0
 		padding 20px 0 0 0 
@@ -347,8 +374,21 @@ body
 		
 	
 
+@media screen and (min-width 1480px)
+	.Handoff
+		background-position center 50%
+		&.Load
+			background-position center 34%
+	
+	.Content 
+		margin-top 20%
+	.Sponsors
+		margin-top 20%
+			
+		
 
 
+			
 
 
 
