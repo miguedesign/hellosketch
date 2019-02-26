@@ -1,151 +1,187 @@
 var register = function(){
 
-	// $('#FNAME').focus();
-
-	$('.Register_Title').on('click', function(){
-				$('#FNAME').focus();
-			});
-
-	$('#mce-EMAIL, #FNAME').change(function(){
-		$('.Label').addClass('valid');
-		datos();
-	});
-
-	function datos(){
-		if ($('#FNAME').val() == '') {
-			$('.Label').removeClass('valid');
-		}
-	}
 
 	var modal = $('#Modal'),
 			container = $('#Modal__container');
 
-	function getParameterByName(name) {
-	    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-	    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-	    results = regex.exec(location.search);
-	    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+
+
+	$('.Cta.Register').on('click', function(e){
+		e.preventDefault();
+		activeRegister();
+		$(this).addClass('is-hide');
+
+	});
+
+
+	function activeRegister(){
+		$('.Right').addClass('full');
+		$('.Left').addClass('full');
+		// modal.fadeIn(400,'easeInOutCubic').addClass('is-active');
+		modal.addClass('is-active');
+		$('.Detail').addClass('is-show');
+		$('.bg-full').addClass('is-opacity');
+		$('.Modal_Close').addClass('is-active');
+		
+		console.log('modal open');
+
+
 	}
 
-	var r = getParameterByName('r');
 
-	
-	if (r == 'ok') {
 
-		// console.log('registro ok');
 
-		modal.fadeIn(400,'easeInOutCubic').addClass('is-active');
 
-	}
+	// $('#FNAME').focus();
+
+	// $('.Register_Title').on('click', function(){
+	// 			$('#FNAME').focus();
+	// 		});
+
+	// $('#mce-EMAIL, #FNAME').change(function(){
+	// 	$('.Label').addClass('valid');
+	// 	datos();
+	// });
+
+	// function datos(){
+	// 	if ($('#FNAME').val() == '') {
+	// 		$('.Label').removeClass('valid');
+	// 	}
+	// }
+
+
+	// function getParameterByName(name) {
+	//     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+	//     var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+	//     results = regex.exec(location.search);
+	//     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+	// }
+
+
+
+	// var r = getParameterByName('r');
+	// if (r == 'ok') {
+	// 	// console.log('registro ok');
+	// 	modal.fadeIn(400,'easeInOutCubic').addClass('is-active');
+	// }
+
+
+
 
 	function closeModal(){
-    container.slideUp(500, 'easeInOutCubic');
-		modal.fadeOut(300,'easeInOutCubic').removeClass('is-active');
+      $('.Right').removeClass('full');
+    	$('.Left').removeClass('full');
+    	$('.Detail').removeClass('is-show');
+    	$('.Cta.Register').removeClass('is-hide');
+    	$('.bg-full').removeClass('is-opacity');
+    	$('.Modal_Close').removeClass('is-active');
+			modal.removeClass('is-active');
 
-		$('.Form').removeClass('is-hide');
-		$('#mce-EMAIL').val('');
-		$('#FNAME').val('');
-		$('#LNAME').val('');
-		$resultElement.fadeOut();
+
+
+  	// container.slideUp(500, 'easeInOutCubic');
+		// modal.fadeOut(300,'easeInOutCubic').removeClass('is-active');
+
+		// $('.Form').removeClass('is-hide');
+		// $('#mce-EMAIL').val('');
+		// $('#FNAME').val('');
+		// $('#LNAME').val('');
+		// $resultElement.fadeOut();
 	}
 
 
 	
-	var submit = $('#mc-embedded-subscribe'),
-			input = $('#mce-EMAIL'),
-			$resultElement = $('#resultElement'),
-			$form = $("#mc-embedded-subscribe-form");
+	// var submit = $('#mc-embedded-subscribe'),
+	// 		input = $('#mce-EMAIL'),
+	// 		$resultElement = $('#resultElement'),
+	// 		$form = $("#mc-embedded-subscribe-form");
 
 
 		/*
 		Validar que haya correo valido
 		------------------------------*/
-		submit.on('click', function(e){
+		// submit.on('click', function(e){
 			
-			e.preventDefault();
-			// console.log('clicked');
+		// 	e.preventDefault();
+		// 	// console.log('clicked');
 
-			$(this).addClass('is-sending').attr('disabled', true);
+		// 	$(this).addClass('is-sending').attr('disabled', true);
 
-			$form.validate();
-			if ($form.valid()) {
+		// 	$form.validate();
+		// 	if ($form.valid()) {
 				
-				// console.log('Enviando formulario');
-				$('#mce-LABEL').removeClass('invalid');
+		// 		// console.log('Enviando formulario');
+		// 		$('#mce-LABEL').removeClass('invalid');
 				
-				submitSubscribeForm($form, $resultElement);
-				// submitSubscribeForm($resultElement);
+		// 		submitSubscribeForm($form, $resultElement);
+		// 		// submitSubscribeForm($resultElement);
 
 
-			}
-			else{
-				// console.log('no valid');
-				$('#mce-EMAIL').focus();
-				$('#mce-LABEL').addClass('invalid');
-				submit.removeClass('is-sending').attr('disabled', false);;
+		// 	}
+		// 	else{
+		// 		// console.log('no valid');
+		// 		$('#mce-EMAIL').focus();
+		// 		$('#mce-LABEL').addClass('invalid');
+		// 		submit.removeClass('is-sending').attr('disabled', false);;
 
-			}
+		// 	}
 			
-		});
+		// });
 
-		function submitSubscribeForm($form, $resultElement){
+		// function submitSubscribeForm($form, $resultElement){
 
-			// console.log('casi success')
+		// 	// console.log('casi success')
 			
-			$.ajax({
-				type: "GET",
-				url: $form.attr("action"),
-				data: $form.serialize(),
-				cache: false,
-				dataType: "jsonp",
-				jsonp: "c", // trigger MailChimp to return a JSONP response
-				contentType: "application/json; charset=utf-8",
-				error: function(error){
-					// According to jquery docs, this is never called for cross-domain JSONP requests
-				},
+		// 	$.ajax({
+		// 		type: "GET",
+		// 		url: $form.attr("action"),
+		// 		data: $form.serialize(),
+		// 		cache: false,
+		// 		dataType: "jsonp",
+		// 		jsonp: "c", // trigger MailChimp to return a JSONP response
+		// 		contentType: "application/json; charset=utf-8",
+		// 		error: function(error){
+		// 			// According to jquery docs, this is never called for cross-domain JSONP requests
+		// 		},
 				
-				success: function(data){
-					// console.log('data: ',data);
+		// 		success: function(data){
+		// 			// console.log('data: ',data);
 					
-					submit.removeClass('is-sending').attr('disabled', false);
+		// 			submit.removeClass('is-sending').attr('disabled', false);
 
-					if (data.result != "success") {
-						var message = data.msg || "Lo sentimos, no es posible registrarse. Por favor, inténtelo de nuevo.";
+		// 			if (data.result != "success") {
+		// 				var message = data.msg || "Lo sentimos, no es posible registrarse. Por favor, inténtelo de nuevo.";
 						
-						if (data.msg && data.msg.indexOf("already subscribed") >= 0) {
-							message = "Revisamos y ya te encontrabas registrado al MeetUp, ¡Gracias!";
-						}
+		// 				if (data.msg && data.msg.indexOf("already subscribed") >= 0) {
+		// 					message = "Revisamos y ya te encontrabas registrado al MeetUp, ¡Gracias!";
+		// 				}
 
-						$resultElement.html(message);
-						$('.Form').addClass('is-hide');
-						$('#resultElement').addClass("is-success").fadeIn();
-						$('#Modal').fadeIn(400,'easeInOutCubic').addClass('is-active');
+		// 				$resultElement.html(message);
+		// 				$('.Form').addClass('is-hide');
+		// 				$('#resultElement').addClass("is-success").fadeIn();
+		// 				$('#Modal').fadeIn(400,'easeInOutCubic').addClass('is-active');
 
-					} else {
+		// 			} else {
 						
-						$('.Form').addClass('is-hide');
-						$('#resultElement').addClass("is-success").fadeIn();
-						$('#Modal').fadeIn(400,'easeInOutCubic').addClass('is-active');
+		// 				$('.Form').addClass('is-hide');
+		// 				$('#resultElement').addClass("is-success").fadeIn();
+		// 				$('#Modal').fadeIn(400,'easeInOutCubic').addClass('is-active');
 
 
-						respuesta = data.result;
-						// console.log(respuesta);
+		// 				respuesta = data.result;
+		// 				// console.log(respuesta);
 
-						// $resultElement.removeClass("is-error").addClass("is-success");
-						// lanzar el modal
-						// window.location = "?r=ok";
+		// 				// $resultElement.removeClass("is-error").addClass("is-success");
+		// 				// lanzar el modal
+		// 				// window.location = "?r=ok";
 						
-					}
-				}
-			});
-	  }
+		// 			}
+		// 		}
+		// 	});
+	 //  }
 
 	$(document)
 		.on('click','[href="#close"]',function(e){
-		    e.preventDefault();
-		    closeModal();
-		    })
-		.on('click','.close-modal',function(e){
 		    e.preventDefault();
 		    closeModal();
 		    })
@@ -154,7 +190,12 @@ var register = function(){
 		    if (tecla.keyCode == 27) { 
 	        closeModal();
 		    }
+
 		  }
+
+
+
+
 		});
 
 

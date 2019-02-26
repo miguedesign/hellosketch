@@ -13,45 +13,28 @@
 
 var easing = require('./vendor/easing');
 
-// var simplezoom = require('./vendor/simplezoom');
-
-// var typed = require('./vendor/typed');
-
-// var scrollreveal = require('./libs/scrollreveal');
-
-// var scrolled = require('./libs/scrolled');
-
-// var topbar = require('./libs/topbar');
-
-var hero = require('./libs/hero');
-
-// var sticknav = require('./libs/sticknav');
-
-// var tipedJS = require('./libs/tipedJS');
-
-// var parallax = require('./libs/parallax');
-
 var register = require('./libs/register');
+
+var pageTitles = require('./libs/pageTitles');
+var bgMemories = require('./libs/bgMemories');
 
 
 jQuery(document).ready(function($) {
 	
-	setTimeout(function(){
-		register();
-		hero();
-	},2000);
+	register();
+	pageTitles();
+	bgMemories();
 
-	// scrolled();
-  
-	// topbar();
-	
-	// sticknav();
 
-	// scrollreveal();
+	$('.Cta')
+	.mouseenter(function(){
+		$(this).parents('section').children('.bg-full').addClass('is-hover');
+	})
+	.mouseleave(function(){
+		$(this).parents('section').children('.bg-full').removeClass('is-hover');
+	});
 
-	// tipedJS();
-	
-	// parallax();
+
 
 });
 

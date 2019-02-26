@@ -16,12 +16,12 @@ var config = {
     //Ruta de archivos de desarrollo
     watch: './src/stylus/**/*.styl',
     //Ruta de salida de archivos
-    output: './public/css'
+    output: './static/css'
   },
   scripts: {
   	main: './src/js/main.js',
   	watch: './src/js/**/*.js',
-  	output: './public/js'
+  	output: './static/js'
   },
   files: {
     watch: './**/*.html'
