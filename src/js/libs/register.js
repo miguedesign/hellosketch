@@ -17,47 +17,23 @@ var register = function(){
 	function activeRegister(){
 		$('.Right').addClass('full');
 		$('.Left').addClass('full');
-		// modal.fadeIn(400,'easeInOutCubic').addClass('is-active');
 		modal.addClass('is-active');
 		$('.Detail').addClass('is-show');
 		$('.bg-full').addClass('is-opacity');
 		$('.Modal_Close').addClass('is-active');
 		
-		console.log('modal open');
-
+		$('#FNAME').focus();
 
 	}
 
 
-
-
-
-	// $('#FNAME').focus();
-
-	// $('.Register_Title').on('click', function(){
-	// 			$('#FNAME').focus();
-	// 		});
-
-	// $('#mce-EMAIL, #FNAME').change(function(){
-	// 	$('.Label').addClass('valid');
-	// 	datos();
-	// });
-
-	// function datos(){
-	// 	if ($('#FNAME').val() == '') {
-	// 		$('.Label').removeClass('valid');
-	// 	}
-	// }
-
-
+	// Active Modal for URL
 	// function getParameterByName(name) {
 	//     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
 	//     var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
 	//     results = regex.exec(location.search);
 	//     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 	// }
-
-
 
 	// var r = getParameterByName('r');
 	// if (r == 'ok') {
@@ -76,109 +52,114 @@ var register = function(){
     	$('.bg-full').removeClass('is-opacity');
     	$('.Modal_Close').removeClass('is-active');
 			modal.removeClass('is-active');
+			$('.FormComponent').removeClass('is-hide');
 
-
-
-  	// container.slideUp(500, 'easeInOutCubic');
-		// modal.fadeOut(300,'easeInOutCubic').removeClass('is-active');
-
-		// $('.Form').removeClass('is-hide');
-		// $('#mce-EMAIL').val('');
-		// $('#FNAME').val('');
-		// $('#LNAME').val('');
-		// $resultElement.fadeOut();
 	}
+
+	$('body').on('click', '#BtnAgain', function(e){
+		e.preventDefault();
+		
+		$('.FormComponent').removeClass('is-hide');
+		$resultComponent.html('').removeClass('is-success');
+		submit.removeClass('is-Sending').attr('disabled', false);
+		$('#mce-EMAIL').val('');
+		$('#FNAME').val('');
+		$('#LNAME').val('');
+
+
+	});
 
 
 	
-	// var submit = $('#mc-embedded-subscribe'),
-	// 		input = $('#mce-EMAIL'),
-	// 		$resultElement = $('#resultElement'),
-	// 		$form = $("#mc-embedded-subscribe-form");
-
+	var submit = $('#mc-embedded-subscribe'),
+			$resultComponent = $('#resultComponent'),
+			$form = $("#mc-embedded-subscribe-form");
 
 		/*
 		Validar que haya correo valido
 		------------------------------*/
-		// submit.on('click', function(e){
+		submit.on('click', function(e){
 			
-		// 	e.preventDefault();
-		// 	// console.log('clicked');
+			e.preventDefault();
 
-		// 	$(this).addClass('is-sending').attr('disabled', true);
+			$(this).addClass('is-Sending').attr('disabled', true);
+			// console.log('clicked + sending');
 
-		// 	$form.validate();
-		// 	if ($form.valid()) {
+			$form.validate();
+
+			if ($form.valid()) {
 				
-		// 		// console.log('Enviando formulario');
-		// 		$('#mce-LABEL').removeClass('invalid');
 				
-		// 		submitSubscribeForm($form, $resultElement);
-		// 		// submitSubscribeForm($resultElement);
+			submitSubscribeForm($form, $resultComponent);
+			// console.log('Enviando formulario');
 
+			}
+			else{
+				console.log('no valid');
+				$('#mce-EMAIL').focus();
+				$(this).removeClass('is-Sending').attr('disabled', false);
 
-		// 	}
-		// 	else{
-		// 		// console.log('no valid');
-		// 		$('#mce-EMAIL').focus();
-		// 		$('#mce-LABEL').addClass('invalid');
-		// 		submit.removeClass('is-sending').attr('disabled', false);;
-
-		// 	}
+			}
 			
-		// });
+		});
 
-		// function submitSubscribeForm($form, $resultElement){
+		function submitSubscribeForm($form, $resultComponent){
 
-		// 	// console.log('casi success')
-			
-		// 	$.ajax({
-		// 		type: "GET",
-		// 		url: $form.attr("action"),
-		// 		data: $form.serialize(),
-		// 		cache: false,
-		// 		dataType: "jsonp",
-		// 		jsonp: "c", // trigger MailChimp to return a JSONP response
-		// 		contentType: "application/json; charset=utf-8",
-		// 		error: function(error){
-		// 			// According to jquery docs, this is never called for cross-domain JSONP requests
-		// 		},
+			// console.log('casi success')
+
+			$.ajax({
+				type: "GET",
+				url: $form.attr("action"),
+				data: $form.serialize(),
+				cache: false,
+				dataType: "jsonp",
+				jsonp: "c", // trigger MailChimp to return a JSONP response
+				contentType: "application/json; charset=utf-8",
+				error: function(error){
+					// According to jquery docs, this is never called for cross-domain JSONP requests
+				},
 				
-		// 		success: function(data){
-		// 			// console.log('data: ',data);
+				success: function(data){
+					console.log('data: ',data);
 					
-		// 			submit.removeClass('is-sending').attr('disabled', false);
+					// submit.removeClass('is-Sending').attr('disabled', false).html('Enviar');
 
-		// 			if (data.result != "success") {
-		// 				var message = data.msg || "Lo sentimos, no es posible registrarse. Por favor, inténtelo de nuevo.";
+					if (data.result != "success") {
+						var message = data.msg || "Lo sentimos, no es posible registrarse. Por favor, inténtelo de nuevo.";
 						
-		// 				if (data.msg && data.msg.indexOf("already subscribed") >= 0) {
-		// 					message = "Revisamos y ya te encontrabas registrado al MeetUp, ¡Gracias!";
-		// 				}
+						if (data.msg && data.msg.indexOf("already subscribed") >= 0) {
+							message = "Revisamos y ya te encontrabas registrado al MeetUp, ¡Gracias!";
+						}
 
-		// 				$resultElement.html(message);
-		// 				$('.Form').addClass('is-hide');
-		// 				$('#resultElement').addClass("is-success").fadeIn();
-		// 				$('#Modal').fadeIn(400,'easeInOutCubic').addClass('is-active');
-
-		// 			} else {
+						$resultComponent.addClass('is-success');
+						$('.FormComponent').addClass('is-hide');
 						
-		// 				$('.Form').addClass('is-hide');
-		// 				$('#resultElement').addClass("is-success").fadeIn();
-		// 				$('#Modal').fadeIn(400,'easeInOutCubic').addClass('is-active');
-
-
-		// 				respuesta = data.result;
-		// 				// console.log(respuesta);
-
-		// 				// $resultElement.removeClass("is-error").addClass("is-success");
-		// 				// lanzar el modal
-		// 				// window.location = "?r=ok";
+						setTimeout(function(){
+							$resultComponent.html(message);
+						},500);
 						
-		// 			}
-		// 		}
-		// 	});
-	 //  }
+						
+						setTimeout(function(){
+							$resultComponent.removeClass('is-success').html('');
+							$('.FormComponent').removeClass('is-hide');
+						},5000);
+
+					} else {
+						
+						message = '<h3 class="Success">Gracias por <br /> tu registro</h3> <p>Nos vemos el 14 de marzo 7:00 pm.</p> <p>Recuerda traer una identificación para tener acceso a Centraal.</p> <a href="#" id="BtnAgain">Registrar otro</a>';
+
+						$('.FormComponent').addClass('is-hide');
+						$resultComponent.addClass('is-success');
+
+						setTimeout(function(){
+							$resultComponent.html(message);
+						},500);
+
+						
+					}
+				}
+			});
+	  }
 
 	$(document)
 		.on('click','[href="#close"]',function(e){
@@ -192,9 +173,6 @@ var register = function(){
 		    }
 
 		  }
-
-
-
 
 		});
 

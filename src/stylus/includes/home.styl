@@ -31,6 +31,7 @@ main
 			margin-bottom 20px
 			color black_color
 			
+			
 		p
 			font-size 18px
 			max-width 420px
@@ -42,15 +43,11 @@ header
 	padding 20px 0
 
 .logo
-	background-image url('../img/icon-hello-sketch.svg')
-	background-position center
-	background-repeat none
-	background-size 100%
-	height 35px
-	width 35px
-	display block
-	span
-		display none
+	display inline-block
+	font-size 14px
+	color dark_color
+	font-weight 700
+	line-height 35px
 	
 
 
@@ -185,7 +182,7 @@ header
 		width 8px
 		top 2px
 		transform rotate(45deg)
-		
+	
 	
 @media screen and (min-width screen_large)
 	.Cta
@@ -212,7 +209,8 @@ header
 		z-index 0
 		transition_all(1s)
 		&.is-opacity
-			opacity 0.2
+			opacity 0.3
+			filter blur(40px)
 
 		
 		&.is-hover
@@ -329,7 +327,13 @@ header
 		ul
 			li
 				display block
-				line-height 24px
+				line-height 32px
+				position relative
+				padding-left 20px
+				&::before
+					content '▪︎'
+					position absolute 
+					left 0
 	.SubTitle
 		margin-bottom 10px
 		margin-top 30px
@@ -343,37 +347,49 @@ header
 		top 160px
 		color black_color
 		padding 30px
-		display none
+		padding-bottom 100px
+		overflow hidden
+		.Form
+			transition_all(.3s)
+		
+		&.is-hide
+			min-height 400px
+			padding 0
+			.Form
+				transform scale(0.8)
+				padding 0px
+				opacity 0
+				display none
+				
+
 		&_Header
 			margin-bottom 20px
 			padding 10px 0 20px
-			border-bottom solid thin rgba(dark_color, .2)
 			h4
-				font-weight 700
-				font-size 16px
+				font-weight 400
+				font-size 20px
 		
 		&_Content
 			label
 				display inline-block
 				width 100%
 				font-size 14px
-				color rgba(dark_color, .8)
+				color rgba(dark_color, .7)
 			input
-				background rgba(dark_color, .05)
 				line-height 48px
 				outline 0
 				width 100%
 				border none
-				text-indent 10px
-				border-bottom solid thin transparent
+				border-bottom solid thin rgba(dark_color, .6)
 				font-size 18px
 				transition_all(.3s)
 				&:focus
 					border-bottom solid thin dark_color
 				&:hover
-					background rgba(dark_color, .1)
+					background #F8F7FA
 		&_Item
 			margin-bottom 30px
+			vertical-align top
 			&:last-child
 				margin-bottom 0
 			&-Middle
@@ -382,21 +398,87 @@ header
 				
 		&_Cta
 			background black_color
-			color white_color
-			height 48px
-			padding 10px
-			width 100%
-			transition_all(.3s)
 			border 0 
+			bottom 0
+			color white_color
+			line-height 70px
+			left 0
 			outline 0
-			border-radius 2px
+			padding 10px
+			position absolute
+			text-transform uppercase
+			font-size 12px
+			font-weight 700
+			letter-spacing .5px
+			z-index 100
+			transition_all(.3s)
+			width 100%
 			&:focus,
 			&:hover 
 				background black_color
-				box-shadow 0 0 0 4px rgba(dark_color, .2)
+				font-size 14px
 
+			&.is-Sending
+				background black_color
+				color black_color
+				
+		#LNAME-error,
+		#FNAME-error,
+		#mce-EMAIL-error
+			font-size 12px
+			padding-top 4px
+			color red
 		
+	#resultComponent
+		position absolute
+		top 80%
+		left 0
+		width 100%
+		height 90px
+		display block
+		padding 40px
+		padding-top 300px
+		z-index 10
+		transition_all(.6s)
 		
+		&.is-success
+			background black_color
+			color white_color
+			height 100% 
+			top 0
+			padding-top 40px
+			
+			h3
+				opacity 1
+			p
+				opacity 0.87
+			#BtnAgain
+				opacity 1
+				margin-top 70px
+		
+		h3
+			font-size 40px
+			font-weight 100
+			margin-bottom 40px
+			opacity 0
+			transition_all(.3s)
+		p
+			opacity 0
+			transition_all(.3s)
+		#BtnAgain
+			color rgba(white_color, .6)
+			display inline-block
+			font-size 14px
+			font-weight 700
+			margin-top 400px
+			opacity 0
+			text-transform uppercase
+			transition_all(.3s)
+			&:hover
+				color rgba(white_color, 1)
+				
+				
+				
 			
 				
 			
