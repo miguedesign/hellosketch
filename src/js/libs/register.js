@@ -134,13 +134,13 @@ var register = function(){
 				success: function(data){
 					console.log('data: ',data);
 					
-					// submit.removeClass('is-Sending').attr('disabled', false).html('Enviar');
+					submit.removeClass('is-Sending').attr('disabled', false);
 
 					if (data.result != "success") {
 						var message = data.msg || "Lo sentimos, no es posible registrarse. Por favor, inténtelo de nuevo.";
 						
 						if (data.msg && data.msg.indexOf("already subscribed") >= 0) {
-							message = "Revisamos y ya te encontrabas registrado al MeetUp, ¡Gracias!";
+							message = '<h3 class="Success">Listo</h3> <p>Revisamos y ya te encontrabas registrado al MeetUp, ¡Gracias!</p>';
 						}
 
 						$resultComponent.addClass('is-success');

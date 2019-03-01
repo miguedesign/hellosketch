@@ -6,26 +6,24 @@ main
 	
 .Left,
 .Right
-	width 50%
+	width 100%
 	text-align left
 	display inline-block
-	height 100vh
 	position relative
 	transition_all(.3s)
 
 .Container
-	padding 60px
+	padding 60px 30px 30px
 
 
 
 	
 #Hero
-	height 100vh
 	position relative
 	.About
-		margin-top 170px
+		display block
 		.Title
-			font-size 90px
+			font-size 55px
 			line-height 50px
 			font-weight 700
 			margin-bottom 20px
@@ -33,50 +31,45 @@ main
 			
 			
 		p
-			font-size 18px
-			max-width 420px
+			font-size 16px
 			line-height 28px
 			margin-bottom 40px
 			font-weight 400
 		
 header
-	padding 20px 0
+	display none
+	
 
 .logo
-	display inline-block
-	font-size 14px
-	color dark_color
-	font-weight 700
-	line-height 35px
+	display none
 	
 
 
 .Socials
+	margin-bottom 60px
 	ul
 		li
 			display inline-block
-			margin-right 20px
+			margin-right 10px
 	&_Link
 		display block
 		color rgba(dark_color, .54)
 		transition_all(.3s)
 		font-weight 400
 		font-size 14px
+		line-height 40px
 	
 			
 				
 
 .Partners
-	position absolute 
-	bottom 4%
-	left 4%
 	ul
 		li
 			display inline-block
 			a
 				display block
 				padding 10px
-				height 60px
+				height 40px
 				background-position center
 				background-repeat no-repeat
 				background-size 100%
@@ -84,15 +77,15 @@ header
 				overflow hidden
 				&.Sketchapp
 					background-image url('../img/partners/sketchapp.png')
-					width 180px
+					width 100px
 						 
 				&.Centraal
 					background-image url('../img/partners/centraal.png')
-					width 180px
+					width 100px
 					
 				&.Twenty-three-design
 					background-image url('../img/partners/23design.png')
-					width 60px
+					width 40px
 					
 	
 
@@ -184,14 +177,65 @@ header
 		top 2px
 		transform rotate(45deg)
 	
-	
+.bg-full
+	background-size cover
+	background-repeat no-repeat
+	background-position center
+	position absolute
+	width 100%
+	height 100%
+	top 0
+	left 0
+	display block
+	z-index 0
+	transition_all(1s)
+	&.is-opacity
+		opacity 0.3
+		filter blur(40px)
 @media screen and (min-width screen_large)
+	.Left,
+	.Right
+		width 50%
+		text-align left
+		display inline-block
+		height 100vh
+		position relative
+		transition_all(.3s)
+		
 	#Next,
 	#Backlog
 		&:hover
 			.bg-full
 				transform scale(1.09)
-
+			
+	.Container
+		padding 60px
+	header
+		padding 20px 0
+	.logo
+		display inline-block
+		font-size 14px
+		color dark_color
+		font-weight 700
+		line-height 35px
+	
+	#Hero
+		height 100vh
+		.About
+			margin-top 170px
+			.Title
+				font-size 90px
+				line-height 50px
+				font-weight 700
+				margin-bottom 20px
+				color black_color
+			p
+				font-size 18px
+				max-width 420px
+				line-height 28px
+				margin-bottom 40px
+				font-weight 400
+				
 	.Cta
 		&:hover
 			&:after
@@ -204,29 +248,9 @@ header
 			
 		
 	.bg-full
-		background-size cover
-		background-repeat no-repeat
-		background-position center
-		position absolute
-		width 100%
-		height 100%
-		top 0
-		left 0
-		display block
-		z-index 0
-		transition_all(1s)
-		&.is-opacity
-			opacity 0.3
-			filter blur(40px)
-
-		
 		&.is-hover
 			transform scale(1.09)
 			
-
-		
-		
-		
 	
 	.Socials
 		&_Link
@@ -254,7 +278,23 @@ header
 				color rgba(dark_color, 1)
 				&::after
 					width 100%
-		
+	.Partners
+		position absolute 
+		bottom 4%
+		left 4%
+		ul
+			li
+				a
+					height 60px
+					&.Sketchapp
+						width 180px
+
+					&.Centraal
+						width 180px
+
+					&.Twenty-three-design
+						width 60px
+			
 	
 	// Register
 	.Detail
