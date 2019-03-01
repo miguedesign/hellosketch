@@ -6,12 +6,24 @@ var register = function(){
 
 
 
-	$('.Cta.Register').on('click', function(e){
+	$('#Next').on('click', function(e){
 		e.preventDefault();
-		activeRegister();
-		$(this).addClass('is-hide');
+		if(modal.hasClass('is-active')){
+			// console.log('no hacer nada');
+		}
+		else{
+			activeRegister();
+			$('.Cta.Register').addClass('is-hide');
+		}
 
 	});
+
+	// $('.Cta.Register').on('click', function(e){
+	// 	e.preventDefault();
+	// 	activeRegister();
+	// 	$(this).addClass('is-hide');
+
+	// });
 
 
 	function activeRegister(){

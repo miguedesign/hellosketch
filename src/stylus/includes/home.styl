@@ -105,6 +105,7 @@ header
 	color white_color
 	position relative
 	overflow hidden
+	display block
 	transition_all(.3s)
 	
 	
@@ -185,6 +186,12 @@ header
 	
 	
 @media screen and (min-width screen_large)
+	#Next,
+	#Backlog
+		&:hover
+			.bg-full
+				transform scale(1.09)
+
 	.Cta
 		&:hover
 			&:after
@@ -396,7 +403,7 @@ header
 				width 49%
 				display inline-block
 				
-		&_Cta
+		&_Submit
 			background black_color
 			border 0 
 			bottom 0
