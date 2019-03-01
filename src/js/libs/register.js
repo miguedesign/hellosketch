@@ -6,8 +6,9 @@ var register = function(){
 
 
 
-	$('#Next').on('click', function(e){
-		e.preventDefault();
+	$('#Next').on('click', function(){
+		// e.preventDefault();
+		// e.stopPropagation();
 		if(modal.hasClass('is-active')){
 			// console.log('no hacer nada');
 		}
@@ -34,7 +35,16 @@ var register = function(){
 		$('.bg-full').addClass('is-opacity');
 		$('.Modal_Close').addClass('is-active');
 		
-		$('#FNAME').focus();
+		// Cambiar esto sólo para desktop
+
+		if (window.matchMedia("(min-width: 400px)").matches) {
+		  /* The viewport is at least 400 pixels wide */
+			$('#FNAME').focus();
+		} else {
+		  /* The viewport is less than 400 pixels wide */
+		  console.log('ño');
+		}
+
 
 	}
 
@@ -176,7 +186,11 @@ var register = function(){
 	$(document)
 		.on('click','[href="#close"]',function(e){
 		    e.preventDefault();
+
+		    console.log('click close');
+
 		    closeModal();
+
 		    })
 		.keydown(function(tecla){
 			if($('#Modal').hasClass('is-active')){
