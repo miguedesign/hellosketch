@@ -12,6 +12,25 @@ main
 	position relative
 	transition_all(.3s)
 
+
+// For active form & expand Next component
+.Left
+	&.full
+		transition_all(.01s)
+		margin-top -100vh
+
+.Right
+	&.full
+		transition_all(1s)
+		#Next
+			transition_all(.5s)
+			width 100%
+			height auto
+			
+		#Backlog
+			height 0px
+			
+
 .Container
 	padding 60px 30px 30px
 
@@ -99,8 +118,7 @@ header
 	position relative
 	overflow hidden
 	display block
-	transition_all(.3s)
-	
+	transition_all(1s)
 	
 	.Container
 		position relative
@@ -176,7 +194,9 @@ header
 		width 8px
 		top 2px
 		transform rotate(45deg)
-	
+	&.is-hide
+		display none
+		
 .bg-full
 	background-size cover
 	background-repeat no-repeat
@@ -192,6 +212,229 @@ header
 	&.is-opacity
 		opacity 0.3
 		filter blur(40px)
+			
+
+.Detail
+	height 0
+	overflow hidden
+	opacity 0
+	margin-top 50px
+	transition_all(0s)
+	transition-delay 0s
+	&.is-show
+		height 100%
+		transition_all(.5s)
+		opacity 1
+		margin-top 0
+		transition-delay .5s
+
+.Modal	
+	position relative
+	transition_all(.3s)
+	.Container
+		transition_all(.3s)
+		position relative
+	&_Close
+		background white_color
+		border-radius 50%
+		height 24px
+		position absolute 
+		right 30px
+		top 20px
+		transition_all(0s)
+		transition-delay 0s
+		width 24px
+		z-index 100
+		transform scale(0)
+		&::before,
+		&::after
+			background rgba(dark_color, .7)
+			content ''
+			display block
+			height 2px
+			left 25%
+			position absolute
+			top 50%
+			transition_all(.3s)
+			width 50%
+		&::before
+			transform rotate(-45deg)
+		&::after
+			transform rotate(45deg)
+		span
+			display none
+		&.is-active
+			display block
+			transform scale(1)
+			transition_all(.5s)
+			transition-delay .5s
+	&.is-active
+		transition-delay .5s
+		.Container
+			margin 0 auto
+			padding-top 60px
+		.Link_address
+			text-decoration underline	
+		.Caption
+			margin-bottom 20px
+
+
+			
+.Description
+	display inline-block
+	vertical-align top
+	ul
+		li
+			display block
+			line-height 32px
+			position relative
+			padding-left 20px
+			&::before
+				content '▪︎'
+				position absolute 
+				left 0
+.SubTitle
+	margin-bottom 10px
+	margin-top 30px
+
+.FormComponent
+	background white_color
+	display inline-block
+	width 360px
+	color black_color
+	padding 30px
+	padding-bottom 100px
+	overflow hidden
+	.Form
+		transition_all(.3s)
+	
+	&.is-hide
+		min-height 400px
+		padding 0
+		.Form
+			transform scale(0.8)
+			padding 0px
+			opacity 0
+			display none
+			
+
+	&_Header
+		margin-bottom 20px
+		padding 10px 0 20px
+		h4
+			font-weight 400
+			font-size 20px
+	
+	&_Content
+		label
+			display inline-block
+			width 100%
+			font-size 14px
+			color rgba(dark_color, .7)
+		input
+			line-height 48px
+			outline 0
+			width 100%
+			border none
+			border-bottom solid thin rgba(dark_color, .6)
+			font-size 18px
+			transition_all(.3s)
+			&:focus
+				border-bottom solid thin dark_color
+			&:hover
+				background #F8F7FA
+	&_Item
+		margin-bottom 30px
+		vertical-align top
+		&:last-child
+			margin-bottom 0
+		&-Middle
+			width 49%
+			display inline-block
+			
+	&_Submit
+		background black_color
+		border 0 
+		bottom 0
+		color white_color
+		line-height 70px
+		left 0
+		outline 0
+		padding 10px
+		position absolute
+		text-transform uppercase
+		font-size 12px
+		font-weight 700
+		letter-spacing .5px
+		z-index 100
+		transition_all(.3s)
+		width 100%
+		&:focus,
+		&:hover 
+			background black_color
+			font-size 14px
+
+		&.is-Sending
+			background black_color
+			color black_color
+			
+	#LNAME-error,
+	#FNAME-error,
+	#mce-EMAIL-error
+		font-size 12px
+		padding-top 4px
+		color red
+	
+#resultComponent
+	position absolute
+	top 80%
+	left 0
+	width 100%
+	height 90px
+	display block
+	padding 40px
+	padding-top 300px
+	z-index 10
+	transition_all(.6s)
+	
+	&.is-success
+		background black_color
+		color white_color
+		height 100% 
+		top 0
+		padding-top 40px
+		
+		h3
+			opacity 1
+		p
+			opacity 0.87
+		#BtnAgain
+			opacity 1
+			margin-top 70px
+	
+	h3
+		font-size 40px
+		font-weight 100
+		margin-bottom 40px
+		opacity 0
+		transition_all(.3s)
+	p
+		opacity 0
+		transition_all(.3s)
+	#BtnAgain
+		color rgba(white_color, .6)
+		display inline-block
+		font-size 14px
+		font-weight 700
+		margin-top 400px
+		opacity 0
+		text-transform uppercase
+		transition_all(.3s)
+		&:hover
+			color rgba(white_color, 1)
+			
+
+
 @media screen and (min-width screen_large)
 	.Left,
 	.Right
@@ -201,17 +444,39 @@ header
 		height 100vh
 		position relative
 		transition_all(.3s)
-		
+			
+
+	// For active form & expand Next component
+	.Left
+		&.full
+			margin-left -50%
+			margin-top 0px
+			transition_all(1s)
+			
+	.Right
+		&.full
+			transition_all(1s)
+			width 100%
+			#Next
+				transition_all(1s)
+				width 100%
+				height 100%
+			#Backlog
+				height 0px
+				
 	#Next,
 	#Backlog
+		transition_all(1s)
 		&:hover
 			.bg-full
 				transform scale(1.09)
 			
 	.Container
 		padding 60px
+		
 	header
 		padding 20px 0
+		
 	.logo
 		display inline-block
 		font-size 14px
@@ -278,6 +543,8 @@ header
 				color rgba(dark_color, 1)
 				&::after
 					width 100%
+					
+
 	.Partners
 		position absolute 
 		bottom 4%
@@ -312,60 +579,20 @@ header
 			transition-delay .5s
 		
 	.Modal	
-		position relative
-		transition_all(.3s)
-		.Container
-			transition_all(.3s)
-			position relative
 		&_Close
-			background white_color
-			border-radius 50%
-			height 24px
-			position absolute 
 			right 48px
 			top 148px
-			transition_all(0s)
-			transition-delay 0s
-			width 24px
-			z-index 100
-			transform scale(0)
-			&::before,
-			&::after
-				background rgba(dark_color, .7)
-				content ''
-				display block
-				height 2px
-				left 25%
-				position absolute
-				top 50%
-				transition_all(.3s)
-				width 50%
-			&::before
-				transform rotate(-45deg)
-			&::after
-				transform rotate(45deg)
-			span
-				display none
 			&:hover
 				&::before,
 				&::after
 					background rgba(dark_color, 1)
-			&.is-active
-				display block
-				transform scale(1)
-				transition_all(.5s)
-				transition-delay .5s
 		&.is-active
-			transition-delay .5s
 			.Container
 				max-width 1080px
 				margin 0 auto
 				padding-top 160px
-			.Link_address
-				text-decoration underline	
-			.Caption
-				margin-bottom 20px
-				
+			
+
 	.Description
 		display inline-block
 		width calc(100% - 360px)
@@ -528,23 +755,7 @@ header
 				
 			
 				
-			
-
-	// For active form & expand Next component
-	.Left
-		&.full
-			transition_all(1s)
-			margin-left -50%
-	.Right
-		&.full
-			transition_all(1s)
-			width 100%
-			#Next
-				width 100%
-				height 100%
-			
-			#Backlog
-				height 0px
+		
 				
 		
 		
