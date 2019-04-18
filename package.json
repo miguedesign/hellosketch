@@ -1,9 +1,9 @@
 {
-  "name": "Minz-Portfolio",
+  "name": "Hello Sketch",
   "version": "1.0.0",
   "description": "",
   "main": "gulpfile.js",
-  "author": "Minz <minzdesigner@gmail.com>",
+  "author": "Migue <hello@migue.design>",
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.18.12",
@@ -17,8 +17,5 @@
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   },
-  "dependencies": {
-    "file-system": "^2.2.2",
-    "jsonfile": "^4.0.0"
-  }
+  "dependencies": {}
 }

@@ -5,7 +5,7 @@ var bgMemories = function(){
 	
 
 	url = "./static/img/backlog/",
-	bgMemories = ["000", "001", "002", "003", "004"],
+	bgMemories = ["000", "001", "002", "003", "004", "005"],
 	ext = ".jpg",
 	pickbgMemorie = Math.floor(Math.random()*bgMemories.length);
 
