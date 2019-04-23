@@ -168,7 +168,7 @@ var register = function(){
 
 					} else {
 						
-						message = '<h3 class="Success">Gracias por <br /> tu registro</h3> <p>Nos vemos el 14 de marzo 7:00 pm.</p> <p>Recuerda traer una identificación para tener acceso a Centraal.</p> <a href="#" id="BtnAgain">Registrar otro</a>';
+						message = '<h3 class="Success">Gracias por <br /> tu registro</h3> <p>Nos vemos el 9 de mayo 7:00 pm.</p> <p>Recuerda traer una identificación para tener acceso a Centraal.</p> <a href="#" id="BtnAgain">Registrar otro</a>';
 
 						$('.FormComponent').addClass('is-hide');
 						$resultComponent.addClass('is-success');
